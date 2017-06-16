@@ -28,18 +28,19 @@
 ## 二、unity接口文件
   interface下面的ElvaChatServiceSDKAndroid.cs。
 ## 三、elvachatservice导入到项目
-  把elvachatservice文件夹拷贝到plugins/Android下，然后导入。
-  将aarforunity文件夹拷贝到plugins/Android下，然后导入。
+  把elvachatservice文件夹拷贝到plugins/Android下，然后导入。<br />
+  将aarforunity文件夹拷贝到plugins/Android下，然后导入。<br />
+  注：如果是unity4及以下版本，把elvachatservice文件夹拷贝到plugins/Android下，然后导入。将jarforcocos文件夹下面的内容拷贝到plugins/Android下，然后导入。
 ## 四、Google App Indexing导入到项目
   导入play-services-appindexing到您的项目中(如果项目包含google service appindexing可忽略该步)。
 ## 五、接入工程配置
   在AndroidManifest.xml，增加需要的配置：     
-#### 1、增加需要的权限
+#### 1、增加需要的权限： (manifest节点下)
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-#### 2、增加activity:
+#### 2、增加activity:  （application节点下）
     <activity
        android:name="com.ljoy.chatbot.ChatMainActivity"
        android:configChanges="orientation|screenSize|locale"
@@ -66,7 +67,7 @@
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             >
     </activity>
-#### 3、增加meta        
+#### 3、增加meta   （application节点下）
     <meta-data
        android:name="com.google.android.gms.version"
        android:value="@integer/google_play_services_version" />
