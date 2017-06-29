@@ -77,7 +77,7 @@
 #### 1、sdk初始化
    创建Activity中传递的应用：（必须在游戏开始阶段调用）<br />
    <br />
-a.如果是在主Activity的onCreate中调用初始化接口init，则：<br />
+在主Activity的onCreate中调用初始化接口init，则：<br />
     ELvaChatServiceSdk.init(Activity a, final String appSecret, final String domain, final String appId); <br />
 > * 其中：<br />
 activity:当前运行的action，传this即可。<br />
@@ -86,8 +86,7 @@ domain:app域名，从Web管理系统获取。<br />
 AppId:app唯一标识，从Web管理系统获取。<br />
 注：后面这三个参数，请使用注册时的邮箱地址作为登录名登录 [Elva AI 后台](https://aihelp.net/elva)。在Settings菜单Applications页面查看。初次使用，请先登录[Elva AI 官网](http://aihelp.net/index.html)自助注册。<br />
 
-b.如果需要延迟调用，则：<br />
-在unity调用ElvaChatServiceSDKAndroid.getInstance().init(string appKey,string domain,string appId)<br />   
+
           
 #### 2、接口调用方法
 1) 智能客服主界面启动，调用`showElva`方法，启动机器人界面<br />
@@ -170,7 +169,8 @@ config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动�
 11) Elva AI 运营模块主界面启动，调用`showElvaOP`方法，启动运营模块界面<br />
 showElvaOP(string playerName, string playerUid, string serverId, string playerParseId, string showConversationFlag, Dictionary\<string,object> config, int defaultTabIndex);
 
-> * 参数说明： 
+> * 参数说明：
+        <pre>
 > playerName:游戏中玩家名称。 <br />
 > playerUid:玩家在游戏里的唯一标示id。 <br />
 > serverId:玩家所在的服务器编号。 <br />
@@ -179,7 +179,7 @@ showElvaOP(string playerName, string playerUid, string serverId, string playerPa
 > config:自定义ValueMap信息。可以在此处设置特定的Tag信息。<br />
 > defaultTabIndex:可选，设置默认打开的Tab页index（从0开始，如需默认打开Elva，可设置为999）。<br />	
 #### 
-> * 参数示例:   
+> * 参数示例:   <br />
         Dictionary<string, object> dic = new Dictionary<string, object>(); <br />
         dic.Add("dic1", "aaa"); <br />
         dic.Add("dic2", "bbb"); <br />
@@ -190,7 +190,30 @@ showElvaOP(string playerName, string playerUid, string serverId, string playerPa
         dic.Add("hs-tags", tags); <br />
         ElvaChatServiceSDKAndroid.getInstance().showElvaOP("elvaTestName","12349303258",1, "","1",dic); <br />
 > 
-12) 设置语言，调用`setSDKLanguage`方法(Elva默认使用手机语言适配，如需修改，可在初始化之后调用，并在切换App语言后再次调用。)<br />
+
+12）从不同入口进入不同故事线功能。
+通过dic.Add("anotherWelcomeText","heroText");来启用不同入口进入不同故事线功能。
+> * 参数示例: 
+        <pre>
+        Dictionary<string, object> dic = new Dictionary<string, object>();  <br />
+dic.Add("dic1", "aaa");  <br />
+dic.Add("dic2", "bbb");  <br />
+List tags = new List();  <br />
+//说明：hs-tags对应的值为List类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效。  <br />
+tag.Add("paid");  <br />
+tag.Add("server1");  <br />
+dic.Add("hs-tags", tags);  <br />
+//调用不同故事线功能，使用指定的提示语句，调出相应的机器人欢迎语。 <br />
+//注：heroText提示语句，需要和故事线中的User Say相对应。 <br />
+dic.Add("anotherWelcomeText","heroText"); <br />
+//如果是在智能客服主界面中
+ElvaChatServiceSDKAndroid.getInstance().showElva("elvaTestName","12349303258",1, "","1",dic);  <br />
+//如果是在智能客服运营主界面中
+ElvaChatServiceSDKAndroid.getInstance().showElvaOP("elvaTestName","12349303258",1, "","1",dic); <br />
+
+
+
+13) 设置语言，调用`setSDKLanguage`方法(Elva默认使用手机语言适配，如需修改，可在初始化之后调用，并在切换App语言后再次调用。)<br />
 setSDKLanguage (String language);<br />
 > * 参数说明:<br />
 language:语言名称。如英语为en,简体中文为zh_CN。更多语言简称参见Elva后台，"设置"-->"语言"的Alias列。<br />
