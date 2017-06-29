@@ -170,7 +170,7 @@ config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动�
 showElvaOP(string playerName, string playerUid, string serverId, string playerParseId, string showConversationFlag, Dictionary\<string,object> config, int defaultTabIndex);
 
 > * 参数说明：
-        <pre>
+
 > playerName:游戏中玩家名称。 <br />
 > playerUid:玩家在游戏里的唯一标示id。 <br />
 > serverId:玩家所在的服务器编号。 <br />
@@ -180,6 +180,7 @@ showElvaOP(string playerName, string playerUid, string serverId, string playerPa
 > defaultTabIndex:可选，设置默认打开的Tab页index（从0开始，如需默认打开Elva，可设置为999）。<br />	
 #### 
 > * 参数示例:   <br />
+        <pre>
         Dictionary<string, object> dic = new Dictionary<string, object>(); <br />
         dic.Add("dic1", "aaa"); <br />
         dic.Add("dic2", "bbb"); <br />
