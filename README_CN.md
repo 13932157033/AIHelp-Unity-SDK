@@ -77,7 +77,7 @@ init(string appKey,string domain,string appId);
 ```
 
 ```
-ElvaChatServiceSDKAndroid构造函数:
+ElvaChatServiceSDKAndroid的构造函数:
 
 	public ElvaChatServiceSDKAndroid(string appKey, string domain, string appId)
 	{
@@ -107,13 +107,30 @@ ElvaChatServiceSDKAndroid构造函数:
 **初始化代码示例：**
 
 ```
-// 一定要在应用启动时进行初始化init操作，不然会无法进入AIHelp智能客服系统。
-ECServiceCocos2dx::init(
-			"YOUR_API_KEY",
-			"YOUR_DOMAIN_NAME",
-			"YOUR_APP_ID");
-```
+// 一定要在应用启动时进行初始化操作，不然会无法进入AIHelp智能客服系统。
 
+private void initAIHelpSDK()
+{
+    aihelpService = new AIhelpServiceExample();
+}
+public AIhelpServiceExample()
+{
+    #if UNITY_ANDROID
+        if(Application.platform == RuntimePlatform.Android)
+		sdk = new ElvaChatServiceSDKAndroid(
+			"TRYELVA_app_5a6b4540bbee4d7280fda431700ed71a", 
+			"TryElva.AIHELP.NET", 
+			"TryElva_platform_14970be5-d3bf-4f91-8c70-c2065cc65e9a");
+    #endif
+	#if UNITY_IOS
+		if(Application.platform == RuntimePlatform.IPhonePlayer)
+	    sdk = new ElvaChatServiceSDKIOS(
+	    	"TRYELVA_app_5a6b4540bbee4d7280fda431700ed71a",
+	    	"TryElva.AIHELP.NET", 
+	    	"TryElva_pf_ec28eb91dd7d463bb359fc53d43dcfd6");
+	#endif
+}
+```
 ---
 
 ### 5. 使用AIHelp 接口
@@ -138,44 +155,37 @@ ECServiceCocos2dx::init(
 
 #### <h4 id="showElva">2. 智能客服主界面启动，调用`showElva`接口，启动机器人客服聊天界面</h4>
 
-
-	ECServiceCocos2dx::showElva(
+	void showElva(
 				string playerName,
 				string playerUid,
-				int serverId,
+				string serverId,
 				string playerParseId,
 				string showConversationFlag);
 			
 
 或
 
-	ECServiceCocos2dx::showElva(
+	void showElva(
 				string playerName,
 				string playerUid,
-				int serverId,
+				string serverId,
 				string playerParseId,
 				string showConversationFlag,
-				cocos2d::ValueMap& config);
+				Dictionary<string,object> config);
 
 **代码示例：**
 
-	// Presenting AI Help Converation with your customers
-	void GameSettingsScene::menuHelpCallback(CCObject* pSender)
-	{						
-		ECServiceCocos2dx::showElva (
-				"USER_NAME",
-				"USER_ID",
-				123, 
-				"",
-				"1",
-				{ 
-					hs-custom-metadata＝｛
-					hs-tags＝'军队，充值',
-					VersionCode＝'3'
-					｝
-				});
+	public void AIChat()
+	{
+		Debug.Log ("Open AIChat");
+		sdk.showElva(
+				"TEST_PLAYER_NAME", 
+				"TEST_UID_123", 
+				"TEST_SRV_ID_123", 
+				"", 
+				"1");
 	}
-
+	
 **参数说明：**
 
 - playerName:游戏中用户名称。 
