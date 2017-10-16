@@ -1,4 +1,4 @@
-[查看Android中文接入文档](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README_CN.md)
+[查看Unity SDK中文接入文档](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README_CN.md)
 
 ## AIHelp SDK Integration Guide
 ### 1. Download The AIHelp Unity SDK：
