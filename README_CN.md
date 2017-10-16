@@ -185,7 +185,6 @@ public AIhelpServiceExample()
 				string showConversationFlag);
 			
 
-或
 
 	void showElva(
 				string playerName,
@@ -394,7 +393,7 @@ public AIhelpServiceExample()
 
 #### <h4 id="UserId">7. 设置用户唯一ID信息，调用`setUserId`方法</h4>
 
-	void setUserId(string serverId);
+	void setUserId(string userId);
 
 **代码示例：**
 
