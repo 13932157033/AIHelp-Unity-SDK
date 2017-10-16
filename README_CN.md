@@ -1,20 +1,23 @@
 ## 接入说明
-### 1. 下载AIHelp Unity SDK：
+### 1. 下载AIhelp Unity SDK：
 点击页面右上角的“Clone or download”按钮下载, 下载完成后解压文件得到：
 aihelp-plugin-unity.unitypackage
 
 | 文件 | 说明 |
 |:------------- |:---------------|
-| **aihelp-plugin-unity.unitypackage**    | AIHelp Unity3D SDK|
+| **aihelp-plugin-unity.unitypackage**    | AIhelp Unity3D SDK|
 | **AndroidManifest.xml**    | 示例AndroidManifest.xml|
 
-### 2. 把AIHelp SDK 放入你的Unity3D 工程：
-打开Unity工程，在菜单栏选择Assets->Import Package->Custom Package，选择aihelp-plugin-unity.unitypackage。
+### 2. 把AIhelp SDK 放入你的Unity3D 工程：
+打开Unity工程，在菜单栏选择Assets->Import Package->Custom Package，选择**aihelp-plugin-unity.unitypackage**
 
 或者直接双击aihelp-plugin-unity.unitypackage打开。
 
 在弹出的窗口中选择import把aihelp unity sdk 导入到您的工程。
 
+```
+注意：导入SDK后，不要擅自改动Plugins/Android 或者Plugins/iOS有关AIhelp sdk的文件位置，除非你特别清楚这么做的理由。否则会导致接入不成功。
+```
 	
 ![Import AIHelp Package](https://github.com/AI-HELP/Docs-Screenshots/blob/master/import-aihelp-unity-package.png "Import AIHelp Package")
 
@@ -70,6 +73,7 @@ aihelp-plugin-unity.unitypackage
 如果你的Unity工程还没有AndroidManifest.xml, 可以参照SDK下载文件包含的中的AndroidManifest.xml创建一个。
 ### 4. 在你的Unity工程中初始化AIHelp SDK
 
+#### Android: 
 ```
 在你的游戏初始化时实例化ElvaChatServiceSDKAndroid 并且调用传入appKey, domain, appId:
 
@@ -85,6 +89,24 @@ ElvaChatServiceSDKAndroid的构造函数:
 		currentActivity = jc.GetStatic<AndroidJavaObject>("currentActivity");
 		sdk = new AndroidJavaClass("com.ljoy.chatbot.sdk.ELvaChatServiceSdk");
 
+		// pass the appkey, domain and appId of your own app, respectively
+		init(appKey, domain, appId);
+	}
+
+```
+
+#### iOS:
+```
+在你的游戏初始化时实例化ElvaChatServiceSDKIOS 并且调用传入appKey, domain, appId:
+
+init(string appKey,string domain,string appId);
+```
+
+```
+ElvaChatServiceSDKIOS的构造函数:
+
+	public ElvaChatServiceSDKIOS(string appKey, string domain, string appId)
+	{
 		// pass the appkey, domain and appId of your own app, respectively
 		init(appKey, domain, appId);
 	}
