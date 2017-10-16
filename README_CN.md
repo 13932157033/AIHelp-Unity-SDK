@@ -357,7 +357,7 @@ public AIhelpServiceExample()
 
 #### <h4 id="setName">6. 设置游戏名称信息，调用`setName`方法(建议游戏刚进入，调用init之后就默认调用)</h4>
 
-    void setName(string game_name);
+	void setName(string game_name);
 
 **代码示例：**
 
@@ -404,11 +404,11 @@ public AIhelpServiceExample()
 #### <h4 id="ServerId">9. 设置服务器唯一ID信息，调用`setServerId`方法
 </h4>
 
-	ECServiceCocos2dx::setServerId(int serverId);
+	void setServerId(int serverId);
 
 **代码示例：**
 
-	ECServiceCocos2dx::setServerId("SERVER_ID");
+	sdk.seterverId("SERVER_ID");
 
 **参数说明：**
 
@@ -420,15 +420,15 @@ public AIhelpServiceExample()
 
 #### <h4 id="showConversation">10. 直接进入人工客服聊天，调用`showConversation`方法(要求设置[UserName](#UserName))</h4>
 
-		void showConversation(
-					string playerUid,
-					string serverId);
+	void showConversation(
+				string playerUid,
+				string serverId);
 或
 
-		void showConversation(
-					string playerUid,
-					string serverId,
-					Dictionary<string,object> config);
+	void showConversation(
+				string playerUid,
+				string serverId,
+				Dictionary<string,object> config);
 	
 **代码示例：**
 
@@ -497,22 +497,22 @@ public AIhelpServiceExample()
 	
 	//如果是在智能客服主界面中	
 	sdk.showElva(
-				"TEST_PLAYER_NAME", 
-				"TEST_UID_123", 
-				"TEST_SRV_ID_123", 
-				"", 
-				"1",
-				config);
+			"TEST_PLAYER_NAME", 
+			"TEST_UID_123", 
+			"TEST_SRV_ID_123", 
+			"", 
+			"1",
+			config);
 或
 
 	//如果是在智能客服运营主界面中
 	sdk.showElvaOP(
-				"TEST_PLAYER_NAME", 
-				"TEST_UID_123", 
-				"TEST_SRV_ID_123", 
-				"", 
-				"1",
-				config);
+			"TEST_PLAYER_NAME", 
+			"TEST_UID_123", 
+			"TEST_SRV_ID_123", 
+			"", 
+			"1",
+			config);
 
 
 **最佳实践：**
