@@ -175,16 +175,25 @@ public AIhelpServiceExample()
 
 **代码示例：**
 
-	public void AIChat()
+	public void AIHelpChat()
 	{
-		Debug.Log ("Open AIChat");
+		Dictionary<string, object> tags = new Dictionary<string, object> ();
+		List<string> tag = new List<string>();
+		tag.Add ("server1");
+		tag.Add ("pay3");
+		tags.Add ("elva-tags", tag);
+		Dictionary<string, object> config = new Dictionary<string, object> ();
+		config.Add ("elva-custom-metadata", tags);
+
 		sdk.showElva(
 				"TEST_PLAYER_NAME", 
 				"TEST_UID_123", 
 				"TEST_SRV_ID_123", 
 				"", 
-				"1");
+				"1",
+				config);
 	}
+
 	
 **参数说明：**
 
@@ -193,7 +202,7 @@ public AIhelpServiceExample()
 - serverId:用户所在的服务器编号。 
 - playerParseId:设置为空字符串（不可为NULL)
 - showConversationFlag(0或1):是否开启人工入口。此处为1时，将在机器人的聊天界面右上角，提供人工聊天的入口。如下图。
-- config:可选，自定义ValueMap信息。可以在此处设置特定的Tag信息。说明：hs-tags对应的值为vector类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效。
+- config:可选，自定义用户信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为个字符串列表，此处传入自定义一个或多个tag值。这些tag需要在Web管理配置同名称的标签才能生效。
 	
 ![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-CN-Android.png "showElva")
 	
@@ -205,42 +214,51 @@ public AIhelpServiceExample()
 
 #### <h4 id="showElvaOP">3. 智能客服运营模块主界面启动，调用`showElvaOP`方法，启动运营模块界面</h4>
 
-	ECServiceCocos2dx::showElvaOP(
+	void showElvaOP(
 				string playerName,
 				string playerUid,
-				int serverId,
+				string serverId,
 				string playerParseId,
-				string showConversationFlag,
-				cocos2d::ValueMap& config);
-
+				string showConversationFlag);
 或
 
-	ECServiceCocos2dx::showElvaOP(
+	void showElvaOP(
 				string playerName,
 				string playerUid,
-				int serverId,
+				string serverId,
 				string playerParseId,
 				string showConversationFlag,
-				cocos2d::ValueMap& config,
+				Dictionary<string,object> config);
+或
+
+	void showElvaOP(
+				string playerName,
+				string playerUid,
+				string serverId,
+				string playerParseId,
+				string showConversationFlag,
+				Dictionary<string,object> config,
 				int defaultTabIndex);
 
 **代码示例：**
 
 	// Presenting Operation Info to your customers
-	void GameSettingsScene::menuOperationCallback(CCObject* pSender)
-	{						
-		ECServiceCocos2dx::showElvaOP (
-					"USER_NAME",
-					"USER_ID",
-					123, 
-					"",
-					"1",
-					{ 
-						hs-custom-metadata＝｛
-						hs-tags＝'军队，充值',
-						VersionCode＝'3'
-						｝
-					});
+	public void OperationModule()
+	{
+		Dictionary<string, object> tags = new Dictionary<string, object> ();
+		List<string> tag = new List<string>();
+		tag.Add ("server1");
+		tag.Add ("pay3");
+		tags.Add ("elva-tags", tag);
+		Dictionary<string, object> config = new Dictionary<string, object> ();
+		config.Add ("elva-custom-metadata", tags);
+		sdk.showElvaOP (
+		     "TEST_PLAYER_NAME", 
+		     "TEST_UID_123", 
+		     "TEST_SRV_ID_123", 
+		     "", 
+		     "1", 
+		     config);
 	}
 
 **参数说明：**
@@ -250,8 +268,8 @@ public AIhelpServiceExample()
 - serverId:用户所在的服务器编号。 
 - playerParseId:设置为空字符串（不可为NULL)
 - showConversationFlag(0或1):是否开启人工入口。此处为1时，将在机器人的聊天界面右上角，提供人工聊天的入口。如下图。
-- config: 自定义ValueMap信息。可以在此处设置特定的Tag信息。说明：hs-tags对应的值为vector类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效。
-- defaultTabIndex: 首次进入运营界面时候展示的tab的编号，默认为第一个tab，若需默认展示客服界面tab，设置值为999
+- config:可选，自定义用户信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为个字符串列表，此处传入自定义一个或多个tag值。这些tag需要在Web管理配置同名称的标签才能生效。
+- defaultTabIndex: 可选，首次进入运营界面时候展示的tab的编号，默认为第一个tab，若需默认展示客服界面tab，设置值为999
 	
 ![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP_Android.png "showElvaOP")
 
@@ -262,29 +280,33 @@ public AIhelpServiceExample()
 
 #### <h4 id="showFAQs">4. 展示FAQ列表, 调用`showFAQs `方法</h4>
 
-	ECServiceCocos2dx::showFAQs();
+	void showFAQs();
 
 或
 
-	ECServiceCocos2dx::showFAQs (cocos2d::ValueMap& config)
+	void showFAQs(Dictionary<string,object> config);
 
 **代码示例：**
 
-	// Presenting FAQs to your customers
-	void GameSettingsScene::menuFAQCallback(CCObject* pSender)
-	{						
-		ECServiceCocos2dx::showFAQs (
-					{ 
-						hs-custom-metadata＝｛
-						hs-tags＝'军队，充值',
-						VersionCode＝'3'
-						｝
-					});
-	}
+    public void ShowFAQs()
+    {
+        if(sdk != null)
+        {
+			Dictionary<string, object> tags = new Dictionary<string, object> ();
+			List<string> tag = new List<string>();
+			tag.Add ("server1");
+			tag.Add ("pay3");
+			tags.Add ("elva-tags", tag);
+			Dictionary<string, object> config = new Dictionary<string, object> ();
+			config.Add ("elva-custom-metadata", tags);
+			config.Add("showConversationFlag", "1"); // 显示可以从FAQ进入人工客服
+			sdk.showFAQs(config);
+        }
+    }
 
 **参数说明：**
 
-- config:可选，自定义ValueMap信息。可以在此处设置特定的Tag信息。说明：hs-tags对应的值为vector类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效。
+- config:可选，自定义用户信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为个字符串列表，此处传入自定义一个或多个tag值。这些tag需要在Web管理配置同名称的标签才能生效。
 	
 ![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQs-CN-Android.png "showFAQs")
 
@@ -294,33 +316,32 @@ public AIhelpServiceExample()
 #### <h4 id="showSingleFAQ">5. 展示单条FAQ，调用`showSingleFAQ`方法
 </h4>
 
-	ECServiceCocos2dx::showSingleFAQ(string faqId);
-
-或
-
-	ECServiceCocos2dx::showSingleFAQ(
-				string faqId,
-				cocos2d::ValueMap& config);
+	void showSingleFAQ (string faqId);
+	void showSingleFAQ (string faqId, Dictionary<string,object> config);
 
 **代码示例：**
 
-	// Presenting FAQs to your customers
-	void GameSettingsScene::menuFAQCallback(CCObject* pSender)
-	{						
-		ECServiceCocos2dx::showSingleFAQ (
-					"20",
-					{ 
-						hs-custom-metadata＝｛
-						hs-tags＝'军队，充值',
-						VersionCode＝'3'
-						｝
-					});
-	}
-
+	// Presenting single FAQ to your customers
+    public void ShowSingleFAQ(faqId)
+    {
+        if(sdk != null)
+        {
+			Dictionary<string, object> tags = new Dictionary<string, object> ();
+			List<string> tag = new List<string>();
+			tag.Add ("server1");
+			tag.Add ("pay3");
+			tags.Add ("elva-tags", tag);
+			Dictionary<string, object> config = new Dictionary<string, object> ();
+			config.Add ("elva-custom-metadata", tags);
+			config.Add("showConversationFlag", "1"); // 显示可以从FAQ进入人工客服
+			sdk.showSingleFAQ(faqId, config);
+        }
+    }
+    
 **参数说明：**
 
 - faqId:FAQ的PublishID,可以在[AIHelp 后台](https://aihelp.net/elva)中，从FAQs菜单下找到指定FAQ，查看PublishID。
-- config:可选，自定义ValueMap信息。可以在此处设置特定的Tag信息。说明：hs-tags对应的值为vector类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效。
+- config:可选，自定义用户信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为个字符串列表，此处传入自定义一个或多个tag值。这些tag需要在Web管理配置同名称的标签才能生效。
 	
 ![showSingleFAQ](https://github.com/CS30-NET/Pictures/blob/master/showSingleFAQ-CN-Android.png "showSingleFAQ")
 
@@ -336,11 +357,11 @@ public AIhelpServiceExample()
 
 #### <h4 id="setName">6. 设置游戏名称信息，调用`setName`方法(建议游戏刚进入，调用init之后就默认调用)</h4>
 
-	ECServiceCocos2dx::setName(string game_name);
+    void setName(string game_name);
 
 **代码示例：**
 
-	ECServiceCocos2dx::setName("Your Game");
+	sdk.setName("Your Game");
 
 **参数说明：**
 
@@ -351,12 +372,11 @@ public AIhelpServiceExample()
 
 #### <h4 id="UserId">7. 设置用户唯一ID信息，调用`setUserId`方法</h4>
 
-
-	ECServiceCocos2dx::setUserId(string playerUid);
+	void setUserId(string serverId);
 
 **代码示例：**
 
-	ECServiceCocos2dx::setUserId("123ABC567DEF");
+	sdk.setUserId("123ABC567DEF");
 
 **参数说明：**
 
@@ -367,11 +387,11 @@ public AIhelpServiceExample()
 
 #### <h4 id="UserName">8. 设置用户名称信息，调用`setUserName`方法</h4>
 
-	ECServiceCocos2dx::setUserName (string playerName);
+	void setUserName(string userName);
 
 **代码示例：**
 
-	ECServiceCocos2dx::setUserName ("PLAYER_NAME");
+	sdk.setUserName ("PLAYER_NAME");
 
 **参数说明：**
 
@@ -400,34 +420,39 @@ public AIhelpServiceExample()
 
 #### <h4 id="showConversation">10. 直接进入人工客服聊天，调用`showConversation`方法(要求设置[UserName](#UserName))</h4>
 
-	ECServiceCocos2dx::showConversation(
+		void showConversation(
 					string playerUid,
-					int serverId);
+					string serverId);
 或
 
-	ECServiceCocos2dx::showConversation(
+		void showConversation(
 					string playerUid,
-					int serverId,
-					cocos2d::ValueMap& config);
+					string serverId,
+					Dictionary<string,object> config);
 	
 **代码示例：**
 
-	ECServiceCocos2dx::setUserName ("PLAYER_NAME");
-	ECServiceCocos2dx::showConversation(
-					"PLAYER_ID",
-					123,
-					{ 
-						hs-custom-metadata＝｛
-						hs-tags＝'军队，充值',
-						VersionCode＝'3'
-						｝
-					});
+    public void ShowVIPChat()
+    {
+        if(sdk != null)
+        {
+			Dictionary<string, object> tags = new Dictionary<string, object> ();
+			List<string> tag = new List<string>();
+			tag.Add ("server1");
+			tag.Add ("pay3");
+			tags.Add ("elva-tags", tag);
+			Dictionary<string, object> config = new Dictionary<string, object> ();
+			config.Add ("elva-custom-metadata", tags);
+			sdk.setUserName("PLAYER_NAME");
+			sdk.showConversation(faqId, config);
+        }
+    }
 
 **参数说明：**
 
 - playerUid:用户在游戏里的唯一标识
 - serverId:用户所在的服务器编号
-- config:可选参数，自定义ValueMap信息。可以在此处设置特定的Tag信息。说明：hs-tags对应的值为vector类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效。
+- config:可选，自定义用户信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为个字符串列表，此处传入自定义一个或多个tag值。这些tag需要在Web管理配置同名称的标签才能生效。
 
 **最佳实践：**
 > 1. 通常你不需要调用这个接口，除非你想在应用里设置触发点，让用户有机会直接进入人工客服聊天界面。
@@ -438,11 +463,11 @@ public AIhelpServiceExample()
 #### <h4 id="setSDKLanguage">11. 设置语言，调用`setSDKLanguage`方法
 </h4>
 
-	ECServiceCocos2dx::setSDKLanguage(string language);
+	void setSDKLanguage (string language);
 	
 **代码示例：**
 
-	ECServiceCocos2dx:: setSDKLanguage("en");
+	sdk.setSDKLanguage("en");
 
 **参数说明：**
 
@@ -458,50 +483,37 @@ public AIhelpServiceExample()
 #### 12. 设置另一个欢迎语。
 
 如果你设置了进入AI客服的不同入口，希望用户从不同的入口进入AI客服时显示不同的欢迎语，进入不同故事线，可以通过设置config参数来实现： 
-
-	map.put("anotherWelcomeText","usersay");
-
 	
 **代码示例：**
 
-	ArrayList<String> tags = new ArrayList();
-	tags.add("军队");
-	tags.add("充值");
-	HashMap<String,Object> map = new HashMap();
-	map.put("hs-tags",tags);
+	Dictionary<string, object> welcomeText = new Dictionary<string, object> ();
 	
 	//调用不同故事线功能，使用指定的提示语句，调出相应的机器人欢迎语
 	//注：anotherWelcomeText是key，不能改变。
 	//需要改变的是usersay，保持和故事线中配置的User Say内容一样
-	map.put("anotherWelcomeText","usersay");
-	HashMap<String,Object> config = new HashMap();
-	config.put("hs-custom-metadata",map);
+	welcomeText.Add("anotherWelcomeText","usersay");
+	Dictionary<string, object> config = new Dictionary<string, object> ();
+	config.Add ("elva-custom-metadata", welcomeText);
 	
 	//如果是在智能客服主界面中	
-	ECServiceCocos2dx::showElva(
-				"elvaTestName",
-				"12349303258",
-				1, 
-				"",
+	sdk.showElva(
+				"TEST_PLAYER_NAME", 
+				"TEST_UID_123", 
+				"TEST_SRV_ID_123", 
+				"", 
 				"1",
 				config);
 或
 
 	//如果是在智能客服运营主界面中
-	ECServiceCocos2dx::showElvaOP(
-				"elvaTestName",
-				"12349303258",
-				1, 
-				"",
+	sdk.showElvaOP(
+				"TEST_PLAYER_NAME", 
+				"TEST_UID_123", 
+				"TEST_SRV_ID_123", 
+				"", 
 				"1",
 				config);
 
 
 **最佳实践：**
 > 1. 引导玩家从不同入口看到不同的服务
-
-
-
-
-
-showConversationFlag
