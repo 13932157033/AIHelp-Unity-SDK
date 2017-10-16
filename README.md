@@ -1,5 +1,7 @@
 [查看Unity SDK中文接入文档](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README_CN.md)
 
+[AIhelp Unity Example Project ](https://github.com/AI-HELP/Unity_Demo)
+
 ## AIHelp SDK Integration Guide
 ### 1. Download The AIHelp Unity SDK：
 Click "Clone or download" to download SDK in github page, unzip the compressed file and get **aihelp-plugin-unity.unitypackage**
