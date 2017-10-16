@@ -68,15 +68,27 @@ aihelp-plugin-unity.unitypackage
     </activity>
 
 如果你的Unity工程还没有AndroidManifest.xml, 可以参照SDK下载文件包含的中的AndroidManifest.xml创建一个。
-### 4. 在你的工程中初始化AIHelp SDK
+### 4. 在你的Unity工程中初始化AIHelp SDK
 
 ```
-注意：
-在你的游戏初始化时实例化ElvaChatServiceSDKAndroid 并且调用init。
-```
+在你的游戏初始化时实例化ElvaChatServiceSDKAndroid 并且调用传入appKey, domain, appId:
 
-```
 init(string appKey,string domain,string appId);
+```
+
+```
+ElvaChatServiceSDKAndroid构造函数:
+
+	public ElvaChatServiceSDKAndroid(string appKey, string domain, string appId)
+	{
+		AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+		currentActivity = jc.GetStatic<AndroidJavaObject>("currentActivity");
+		sdk = new AndroidJavaClass("com.ljoy.chatbot.sdk.ELvaChatServiceSdk");
+
+		// pass the appkey, domain and appId of your own app, respectively
+		init(appKey, domain, appId);
+	}
+
 ```
 	
 
@@ -89,7 +101,7 @@ init(string appKey,string domain,string appId);
 | domain     | 您的AIHelp域名，从Web管理系统获取,例如foo.AIHELP.NET|
 | appId     | app唯一标识，从Web管理系统获取| 
 
-注：请使用注册邮箱登录 [AIHelp 后台](https://aihelp.net/elva)。在Settings菜单Applications页面查看。初次使用，需登录[AIHelp 官网](http://aihelp.net/index.html)自助注册。
+注：请使用注册邮箱登录 [AIHelp 后台](http://cn.aihelp.net/elva)。在“设置”菜单的“应用”页面查看。初次使用，需登录[AIHelp 官网](http://www.aihelp.net/index.html)自助注册。
 
 
 **初始化代码示例：**
