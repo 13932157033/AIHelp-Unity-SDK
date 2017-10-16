@@ -115,16 +115,16 @@ private void initAIHelpSDK()
 }
 public AIhelpServiceExample()
 {
-    #if UNITY_ANDROID
-        if(Application.platform == RuntimePlatform.Android)
+	#if UNITY_ANDROID
+	if(Application.platform == RuntimePlatform.Android)
 		sdk = new ElvaChatServiceSDKAndroid(
 			"TRYELVA_app_5a6b4540bbee4d7280fda431700ed71a", 
 			"TryElva.AIHELP.NET", 
 			"TryElva_platform_14970be5-d3bf-4f91-8c70-c2065cc65e9a");
-    #endif
+	#endif
 	#if UNITY_IOS
-		if(Application.platform == RuntimePlatform.IPhonePlayer)
-	    sdk = new ElvaChatServiceSDKIOS(
+	if(Application.platform == RuntimePlatform.IPhonePlayer)
+		sdk = new ElvaChatServiceSDKIOS(
 	    	"TRYELVA_app_5a6b4540bbee4d7280fda431700ed71a",
 	    	"TryElva.AIHELP.NET", 
 	    	"TryElva_pf_ec28eb91dd7d463bb359fc53d43dcfd6");
