@@ -19,10 +19,13 @@ In your Unity project，choose menu Assets->Import Package->Custom Package，fin
 Or find aihelp-plugin-unity.unitypackage and double-click to open it, 
 import aihelp unity sdk into your project
 
-```
-Note：After you import the sdk, don't change the files location under 不Plugins/Android and Plugins/iOS, unless you have a good reason.Changing file location may result integration failure.
 
-```
+	Note：After you import the sdk, don't change the files location under 
+	Plugins/Android and Plugins/iOS, unless you have a good reason.
+	
+	Changing file location may result integration failure.
+
+
 
 ![Import AIHelp Package](https://github.com/AI-HELP/Docs-Screenshots/blob/master/import-aihelp-unity-package.png "Import AIHelp Package")
 
