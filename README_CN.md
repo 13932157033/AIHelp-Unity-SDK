@@ -480,7 +480,7 @@ public AIhelpServiceExample()
 **最佳实践：**
 > 1. 通常你不需要调用这个接口，除非你想在应用里设置触发点，让用户有机会直接进入人工客服聊天界面。
 
-![showConversation](https://github.com/CS30-NET/Pictures/blob/master/showConversation-CN-Android.png "showConversation")
+![showConversation](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-CN-Android.png "showConversation")
 
 
 #### <h4 id="setSDKLanguage">11. 设置语言，调用`setSDKLanguage`方法
