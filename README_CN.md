@@ -227,7 +227,9 @@ public AIhelpServiceExample()
 - showConversationFlag(0或1):是否开启人工入口。此处为1时，将在机器人的聊天界面右上角，提供人工聊天的入口。如下图。
 - config:可选，自定义用户信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为个字符串列表，此处传入自定义一个或多个tag值。这些tag需要在Web管理配置同名称的标签才能生效。
 	
+
 ![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-CN-Android.png "showElva")
+
 	
 **最佳实践：**
 
