@@ -1,6 +1,9 @@
 # AIHELP Android SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README_CN.md)
 
+## 1.3.6
+1. 实时客服沟通接口showVIPChat
+
 ## 1.3.5
 1. 优化机器人和人工客服UI
 2. 修复showElvaOP参数问题
