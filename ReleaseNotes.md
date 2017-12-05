@@ -1,6 +1,9 @@
 # AIHELP Android SDK version update
 [SDK Integration Guide](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README.md)
 
+## 1.3.6
+1. Add showVIPChat, showStoreReview and setFcmToken Interface
+
 ## 1.3.5
 1. Optimize Rebot and Human chat UI.
 2. Fix showElvaOP parameter bug.
