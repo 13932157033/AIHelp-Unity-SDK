@@ -114,7 +114,18 @@ ElvaChatServiceSDKIOS的构造函数:
 	}
 
 ```
-	
+__增加需要的权限:__
+
+请注意，在Unity生成的Unity-iPhone Xcode工程里, 在Info.plist文件增加如下内容：
+
+	<key>NSCameraUsageDescription</key>
+	<string>The customer service of this App may require your permission to access camera</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>The customer service of this App may need to access your location data</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This App may require your permission to access audio speaker for ingame customer service</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This App may require your permission to access photo library for ingame customer service</string>
 
 
 * 参数说明：
