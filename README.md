@@ -203,7 +203,6 @@ public AIhelpServiceExample()
 				string playerName,
 				string playerUid,
 				string serverId,
-				string playerParseId,
 				string showConversationFlag);
 			
 
@@ -212,7 +211,6 @@ public AIhelpServiceExample()
 				string playerName,
 				string playerUid,
 				string serverId,
-				string playerParseId,
 				string showConversationFlag,
 				Dictionary<string,object> config);
 
@@ -233,7 +231,6 @@ public AIhelpServiceExample()
 				"TEST_PLAYER_NAME", 
 				"TEST_UID_123", 
 				"TEST_SRV_ID_123", 
-				"", 
 				"1",
 				config);
 	}
@@ -243,7 +240,6 @@ public AIhelpServiceExample()
 - __playerName__: In-app User Name
 - __playerUid__: In-app Unique User ID
 - __serverId__: The Server ID
-- __playerParseId__: Can be empty string, can NOT be NULL
 - __showConversationFlag__: Should be "0" or "1". If set "1", the VIP conversation entry will be displayed in the upper right of the AI conversation interface.
 - __config__: Optional param for customized information. You can pass specific Tag information using sting list "elva-tags", see above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 	
@@ -262,7 +258,6 @@ The operation module is useful when you want to present update, news, articles o
 				string playerName,
 				string playerUid,
 				string serverId,
-				string playerParseId,
 				string showConversationFlag);
 OR
 
@@ -270,7 +265,6 @@ OR
 				string playerName,
 				string playerUid,
 				string serverId,
-				string playerParseId,
 				string showConversationFlag,
 				Dictionary<string,object> config);
 OR
@@ -279,7 +273,6 @@ OR
 				string playerName,
 				string playerUid,
 				string serverId,
-				string playerParseId,
 				string showConversationFlag,
 				Dictionary<string,object> config,
 				int defaultTabIndex);
@@ -310,7 +303,6 @@ OR
 - __playerName__: User Name in Game/APP
 - __playerUid__: Unique User ID
 - __serverId__: The Server ID
-- __playerParseId__: Can be empty string, can NOT be NULL
 - __showConversationFlag__: Should be "0" or "1". If set "1", the VIP conversation entry will be shown in the top right corner of the AI conversation interface.
 - __config__: Optional param for customized information. You can pass specific Tag information using sting list "elva-tags", see above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 - __defaultTabIndex__: Optional. The index of the first tab to be shown when entering the operation interface. Default value is the left-most tab，if you would like to show the AI conversation interface(the right-most，set it to 999.

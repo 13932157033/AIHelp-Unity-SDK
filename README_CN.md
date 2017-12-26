@@ -194,7 +194,6 @@ public AIhelpServiceExample()
 				string playerName,
 				string playerUid,
 				string serverId,
-				string playerParseId,
 				string showConversationFlag);
 			
 
@@ -203,7 +202,6 @@ public AIhelpServiceExample()
 				string playerName,
 				string playerUid,
 				string serverId,
-				string playerParseId,
 				string showConversationFlag,
 				Dictionary<string,object> config);
 
@@ -223,7 +221,6 @@ public AIhelpServiceExample()
 				"TEST_PLAYER_NAME", 
 				"TEST_UID_123", 
 				"TEST_SRV_ID_123", 
-				"", 
 				"1",
 				config);
 	}
@@ -234,7 +231,6 @@ public AIhelpServiceExample()
 - playerName:游戏中用户名称。 
 - playerUid:用户在游戏里的唯一标识。 
 - serverId:用户所在的服务器编号。 
-- playerParseId:设置为空字符串（不可为NULL)
 - showConversationFlag(0或1):是否开启人工入口。此处为1时，将在机器人的聊天界面右上角，提供人工聊天的入口。如下图。
 - config:可选，自定义用户信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为个字符串列表，此处传入自定义一个或多个tag值。这些tag需要在Web管理配置同名称的标签才能生效。
 	
@@ -254,7 +250,6 @@ public AIhelpServiceExample()
 				string playerName,
 				string playerUid,
 				string serverId,
-				string playerParseId,
 				string showConversationFlag);
 或
 
@@ -262,7 +257,6 @@ public AIhelpServiceExample()
 				string playerName,
 				string playerUid,
 				string serverId,
-				string playerParseId,
 				string showConversationFlag,
 				Dictionary<string,object> config);
 或
@@ -271,7 +265,6 @@ public AIhelpServiceExample()
 				string playerName,
 				string playerUid,
 				string serverId,
-				string playerParseId,
 				string showConversationFlag,
 				Dictionary<string,object> config,
 				int defaultTabIndex);
@@ -292,7 +285,6 @@ public AIhelpServiceExample()
 		     "TEST_PLAYER_NAME", 
 		     "TEST_UID_123", 
 		     "TEST_SRV_ID_123", 
-		     "", 
 		     "1", 
 		     config);
 	}
@@ -302,7 +294,6 @@ public AIhelpServiceExample()
 - playerName:游戏中用户名称。 
 - playerUid:用户在游戏里的唯一标识。 
 - serverId:用户所在的服务器编号。 
-- playerParseId:设置为空字符串（不可为NULL)
 - showConversationFlag(0或1):是否开启人工入口。此处为1时，将在机器人的聊天界面右上角，提供人工聊天的入口。如下图。
 - config:可选，自定义用户信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为个字符串列表，此处传入自定义一个或多个tag值。这些tag需要在Web管理配置同名称的标签才能生效。
 - defaultTabIndex: 可选，首次进入运营界面时候展示的tab的编号，默认为第一个tab，若需默认展示客服界面tab，设置值为999
