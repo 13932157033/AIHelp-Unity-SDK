@@ -136,7 +136,7 @@ __增加需要的权限:__
 | domain     | 您的AIHelp域名，从Web管理系统获取,例如foo.AIHELP.NET|
 | appId     | app唯一标识，从Web管理系统获取| 
 
-注：请使用注册邮箱登录 [AIHelp 后台](http://cn.aihelp.net/elva)。在“设置”菜单的“应用”页面查看。初次使用，需登录[AIHelp 官网](http://www.aihelp.net/index.html)自助注册。
+注：请使用注册邮箱登录 [AIHelp 后台](http://console.aihelp.net/elva)。在“设置”菜单的“应用”页面查看。初次使用，需登录[AIHelp 官网](http://www.aihelp.net/index.html)自助注册。
 
 
 **初始化代码示例：**
