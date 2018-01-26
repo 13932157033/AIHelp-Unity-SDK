@@ -12,7 +12,7 @@ Click "Clone or download" to download SDK in github page, unzip the compressed f
 | **AndroidManifest.xml**    | Example AndroidManifest file|
 
 
-### 2. Add AIHelp to your Cocos2dx project:
+### 2. Add AIHelp to your Unity project:
 
 In your Unity project，choose menu Assets->Import Package->Custom Package，find **aihelp-plugin-unity.unitypackage** in the finder window.
 
