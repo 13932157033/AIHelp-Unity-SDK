@@ -1,22 +1,22 @@
-[查看Unity SDK中文接入文档](https://github.com/AI-HELP/AIHelp-Unity-SDK/blob/master/README_CN.md)
+[查看Unity SDK中文接入文档](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README_CN.md)
 
-[AIHelp Unity Example Project ](https://github.com/AI-HELP/Unity_Demo)
+[AIhelp Unity Example Project ](https://github.com/AI-HELP/Unity_Demo)
 
 ## AIHelp SDK Integration Guide
 ### 1. Download The AIHelp Unity SDK：
-Select "Clone or download" to download the SDK file in the github page, unzip the compressed file and get **AIHelp-plugin-unity.unitypackage**
+Select "Clone or download" to download the SDK file in the github page, unzip the compressed file and get **aihelp-plugin-unity.unitypackage**
 
 | File name | Description |
 |:------------- |:---------------|
-| **AIHelp-plugin-unity.unitypackage**    | AIHelp Unity SDK |
+| **aihelp-plugin-unity.unitypackage**    | AIHelp Unity SDK |
 | **AndroidManifest.xml**    | Example AndroidManifest file|
 
 
 ### 2. Add AIHelp to your Unity project:
 
-In your Unity project，select menu Assets->Import Package->Custom Package，find **AIHelp-plugin-unity.unitypackage** in the finder window.
+In your Unity project，select menu Assets->Import Package->Custom Package，find **aihelp-plugin-unity.unitypackage** in the finder window.
 
-Or find AIHelp-plugin-unity.unitypackage and double-click to open it, 
+Or find aihelp-plugin-unity.unitypackage and double-click to open it, 
 import the AIHelp unity sdk into your project
 
 
@@ -27,7 +27,7 @@ import the AIHelp unity sdk into your project
 
 
 
-![Import AIHelp Package](https://github.com/AI-HELP/Docs-Screenshots/blob/master/import-AIHelp-unity-package.png "Import AIHelp Package")
+![Import AIHelp Package](https://github.com/AI-HELP/Docs-Screenshots/blob/master/import-aihelp-unity-package.png "Import AIHelp Package")
 
  
 ### 3. Configure your Android Manifest（Only for Android)
@@ -143,8 +143,8 @@ Please note that, you should add the below content into the Info.plist file of y
 | domain     | Your AIHelp domain name. For example: foo.AIHelp.NET|
 | appId     | A unique ID assigned to your app.| 
 
-Note: Please log into [AIHelp Web Console](https://console.AIHelp.net/elva) with your registration email account to find the __appKey__, __domain__ and __appId__ In the _Application_ page of the _Settings_ Menu. 
-If your company does not have an account, you can register an account at [AIHelp Website](http://AIHelp.net/index.html)
+Note: Please log into [AIHelp Web Console](https://console.aihelp.net/elva) with your registration email account to find the __appKey__, __domain__ and __appId__ In the _Application_ page of the _Settings_ Menu. 
+If your company does not have an account, you can register an account at [AIHelp Website](http://aihelp.net/index.html)
 
 
 **Coding Example：**
@@ -155,7 +155,7 @@ If your company does not have an account, you can register an account at [AIHelp
 
 private void initAIHelpSDK()
 {
-    AIHelpService = new AIHelpServiceExample();
+    aihelpService = new AIHelpServiceExample();
 }
 public AIHelpServiceExample()
 {
@@ -163,14 +163,14 @@ public AIHelpServiceExample()
 	if(Application.platform == RuntimePlatform.Android)
 	sdk = new ElvaChatServiceSDKAndroid(
 		"TRYELVA_app_5a6b4540bbee4d7280fda431700ed71a", 
-		"TryElva.AIHelp.NET", 
+		"TryElva.AIHELP.NET", 
 		"TryElva_platform_14970be5-d3bf-4f91-8c70-c2065cc65e9a");
 	#endif
 	#if UNITY_IOS
 	if(Application.platform == RuntimePlatform.IPhonePlayer)
 	sdk = new ElvaChatServiceSDKIOS(
 		"TRYELVA_app_5a6b4540bbee4d7280fda431700ed71a",
-		"TryElva.AIHelp.NET", 
+		"TryElva.AIHELP.NET", 
 		"TryElva_pf_ec28eb91dd7d463bb359fc53d43dcfd6");
 	#endif
 }
@@ -243,7 +243,7 @@ public AIHelpServiceExample()
 - __showConversationFlag__: Should be "0" or "1". If set at "1", the VIP conversation entry will be displayed in the upper right hand side of the AI conversation interface.
 - __config__: Optional parameters for customized information. You can pass specific Tag information using the sting list "elva-tags", see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 	
-![showElva](https://github.com/AIHelp-NET/Pictures/blob/master/showElva-EN-Android.png "showElva")
+![showElva](https://github.com/AIHELP-NET/Pictures/blob/master/showElva-EN-Android.png "showElva")
 	
 **Best Practice：**
 
@@ -374,10 +374,10 @@ OR
 
 **About Parameters：**
 
-- __faqId__: The PublishID of the FAQ item, you can check it at in [AIHelp Web Console](https://AIHelp.net/elva): Find the FAQ in the FAQ menu and copy its PublishID.
+- __faqId__: The PublishID of the FAQ item, you can check it at in [AIHelp Web Console](https://aihelp.net/elva): Find the FAQ in the FAQ menu and copy its PublishID.
 - __config__: Optional parameters for customized information. You can pass specific Tag information using sting list "elva-tags", see the above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 	
-![showSingleFAQ](https://github.com/AIHelp-NET/Pictures/blob/master/showSingleFAQ-EN-Android.png "showSingleFAQ")
+![showSingleFAQ](https://github.com/AIHELP-NET/Pictures/blob/master/showSingleFAQ-EN-Android.png "showSingleFAQ")
 
 <h4 id="selfservice"></h4>
 
@@ -492,7 +492,7 @@ or
 **Best Practice：**
 > 1. Normally you do not need to use this method unless you intend to allow users to enter VIP conversation without engaging with the AI chat. You may use this method as a privilege for some users.
 
-![showConversation](https://github.com/AIHelp-NET/Pictures/blob/master/showConversation-EN-Android.png "showConversation")
+![showConversation](https://github.com/AIHELP-NET/Pictures/blob/master/showConversation-EN-Android.png "showConversation")
 
 
 #### <h4 id="setSDKLanguage">11. Set SDK Lanague，use `setSDKLanguage`
