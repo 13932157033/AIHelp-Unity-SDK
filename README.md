@@ -1,37 +1,37 @@
-[查看Unity SDK中文接入文档](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README_CN.md)
+[查看Unity SDK中文接入文档](https://github.com/AI-HELP/AIHelp-Unity-SDK/blob/master/README_CN.md)
 
-[AIhelp Unity Example Project ](https://github.com/AI-HELP/Unity_Demo)
+[AIHelp Unity Example Project ](https://github.com/AI-HELP/Unity_Demo)
 
 ## AIHelp SDK Integration Guide
 ### 1. Download The AIHelp Unity SDK：
-Click "Clone or download" to download SDK in github page, unzip the compressed file and get **aihelp-plugin-unity.unitypackage**
+Select "Clone or download" to download the SDK file in the github page, unzip the compressed file and get **AIHelp-plugin-unity.unitypackage**
 
 | File name | Description |
 |:------------- |:---------------|
-| **aihelp-plugin-unity.unitypackage**    | AIHelp Unity SDK |
+| **AIHelp-plugin-unity.unitypackage**    | AIHelp Unity SDK |
 | **AndroidManifest.xml**    | Example AndroidManifest file|
 
 
 ### 2. Add AIHelp to your Unity project:
 
-In your Unity project，choose menu Assets->Import Package->Custom Package，find **aihelp-plugin-unity.unitypackage** in the finder window.
+In your Unity project，select menu Assets->Import Package->Custom Package，find **AIHelp-plugin-unity.unitypackage** in the finder window.
 
-Or find aihelp-plugin-unity.unitypackage and double-click to open it, 
-import aihelp unity sdk into your project
+Or find AIHelp-plugin-unity.unitypackage and double-click to open it, 
+import the AIHelp unity sdk into your project
 
 
-	Note：After you import the sdk, don't change the files location under 
-	Plugins/Android and Plugins/iOS, unless you have a good reason.
+	Note：After you import the sdk, don not change the files location under 
+	Plugins/Android and Plugins/iOS, unless you have a valid reason.
 	
-	Changing file location may result integration failure.
+	Changing file location may result in an integration failure.
 
 
 
-![Import AIHelp Package](https://github.com/AI-HELP/Docs-Screenshots/blob/master/import-aihelp-unity-package.png "Import AIHelp Package")
+![Import AIHelp Package](https://github.com/AI-HELP/Docs-Screenshots/blob/master/import-AIHelp-unity-package.png "Import AIHelp Package")
 
  
 ### 3. Configure your Android Manifest（Only for Android)
-  In the AndroidManifest.xml of your project, add below information：     
+  In the AndroidManifest.xml of your project, add the below information：     
 **a. Add Required Permissions**
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -77,7 +77,7 @@ import aihelp unity sdk into your project
           <category android:name="android.intent.category.BROWSABLE" />
        </intent-filter>
     </activity>
-**c. Add meta data (if usig appindexing)**      
+**c. Add Meta Data (if using 'appindexing')**      
 
     <meta-data
        android:name="com.google.android.gms.version"
@@ -123,7 +123,7 @@ Instantiate Class ElvaChatServiceSDKIOS with appKey, domain, appId:
 
 __Add Required Permissions:__
 
-Plase be noted, you should add below content into the Info.plist file of your Unity-iPhone Xcode project:
+Please note that, you should add the below content into the Info.plist file of your Unity-iPhone Xcode project:
 
 	<key>NSCameraUsageDescription</key>
 	<string>The customer service of this App may require your permission to access camera</string>
@@ -140,11 +140,11 @@ Plase be noted, you should add below content into the Info.plist file of your Un
 | Parameters | Description |
 |:------------- |:---------------|
 | appKey    | Your unique developer API Key|
-| domain     | Your AIHelp domain name. For example: foo.AIHELP.NET|
+| domain     | Your AIHelp domain name. For example: foo.AIHelp.NET|
 | appId     | A unique ID assigned to your app.| 
 
-Note: Please log in [AIHelp Web Console](https://console.aihelp.net/elva) with your registration email account to find __appKey__, __domain__ and __appId__ In the _Application_ page of the _Settings_ Menu. 
-If your company doesn't have an account, you need to register an account in [AIHelp Website](http://aihelp.net/index.html)
+Note: Please log into [AIHelp Web Console](https://console.AIHelp.net/elva) with your registration email account to find the __appKey__, __domain__ and __appId__ In the _Application_ page of the _Settings_ Menu. 
+If your company does not have an account, you can register an account at [AIHelp Website](http://AIHelp.net/index.html)
 
 
 **Coding Example：**
@@ -155,22 +155,22 @@ If your company doesn't have an account, you need to register an account in [AIH
 
 private void initAIHelpSDK()
 {
-    aihelpService = new AIhelpServiceExample();
+    AIHelpService = new AIHelpServiceExample();
 }
-public AIhelpServiceExample()
+public AIHelpServiceExample()
 {
 	#if UNITY_ANDROID
 	if(Application.platform == RuntimePlatform.Android)
 	sdk = new ElvaChatServiceSDKAndroid(
 		"TRYELVA_app_5a6b4540bbee4d7280fda431700ed71a", 
-		"TryElva.AIHELP.NET", 
+		"TryElva.AIHelp.NET", 
 		"TryElva_platform_14970be5-d3bf-4f91-8c70-c2065cc65e9a");
 	#endif
 	#if UNITY_IOS
 	if(Application.platform == RuntimePlatform.IPhonePlayer)
 	sdk = new ElvaChatServiceSDKIOS(
 		"TRYELVA_app_5a6b4540bbee4d7280fda431700ed71a",
-		"TryElva.AIHELP.NET", 
+		"TryElva.AIHelp.NET", 
 		"TryElva_pf_ec28eb91dd7d463bb359fc53d43dcfd6");
 	#endif
 }
@@ -178,26 +178,26 @@ public AIhelpServiceExample()
 
 ---
 
-### 5. Start using AIHelp
+### 5. Start Using AIHelp
 
-#### 1. API summary
+#### 1. API Summary
 
 | Method Name| Purpose |Prerequisites|
 |:------------- |:---------------|:---------------|
 | **[showElva](#showElva)**      | Launch AI Conversation Interface| 
 | **[showElvaOP](#showElvaOP)** | Launch Operation Interface| Need to configure Operation sections|
-| **[showFAQs](#showFAQs)** | Show all FAQs by sections|Need to configure FAQs|
-|**[showConversation](#showConversation)**|Launch VIP conversation interface| Need to setUserName and setUserId |
-| **[showSingleFAQ](#showSingleFAQ)** | Show single FAQ|Need to configure FAQ|
+| **[showFAQs](#showFAQs)** | Show all FAQs by Sections|Need to configure FAQs|
+|**[showConversation](#showConversation)**|Launch VIP Conversation Interface| Need to setUserName and setUserId |
+| **[showSingleFAQ](#showSingleFAQ)** | Show Single FAQ|Need to configure FAQ|
 | **[setName](#setName)** | Set APP/Game Name|Use it after initialization|
-| **[setUserName](#UserName)** | Set User in-app name|
-| **[setUserId](#UserId)** | Set unique user ID|
-| **[setSDKLanguage](#setSDKLanguage)** | Set SDK language|
+| **[setUserName](#UserName)** | Set User In-App Name|
+| **[setUserId](#UserId)** | Set Unique User ID|
+| **[setSDKLanguage](#setSDKLanguage)** | Set SDK Language|
 
 
-**Note：It's not necessary for you to use all the APIs, especially when you only have one user interface for the customer service in your application. Some APIs already contains entry to other APIs, see below in detail：**
+**Note：It is not necessary for you to use all the APIs, especially when you only have one user interface for the customer service in your application. Some APIs already contains entry to other APIs, See below for details：**
 
-#### <h4 id="showElva">2. Launch the AI Conversation Interface，Use`showElva`</h4>
+#### <h4 id="showElva">2. Launch the AI Conversation Interface，use `showElva`</h4>
 
 	void showElva(
 				string playerName,
@@ -237,22 +237,22 @@ public AIhelpServiceExample()
 
 **About Parameters：**
 
-- __playerName__: In-app User Name
-- __playerUid__: In-app Unique User ID
+- __playerName__: In-App User Name
+- __playerUid__: In-App Unique User ID
 - __serverId__: The Server ID
-- __showConversationFlag__: Should be "0" or "1". If set "1", the VIP conversation entry will be displayed in the upper right of the AI conversation interface.
-- __config__: Optional param for customized information. You can pass specific Tag information using sting list "elva-tags", see above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
+- __showConversationFlag__: Should be "0" or "1". If set at "1", the VIP conversation entry will be displayed in the upper right hand side of the AI conversation interface.
+- __config__: Optional parameters for customized information. You can pass specific Tag information using the sting list "elva-tags", see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 	
-![showElva](https://github.com/AIHELP-NET/Pictures/blob/master/showElva-EN-Android.png "showElva")
+![showElva](https://github.com/AIHelp-NET/Pictures/blob/master/showElva-EN-Android.png "showElva")
 	
 **Best Practice：**
 
-> 1. Use this method to launch your APP's customer service. Configure specific welcome text and AI story line in the AIHelp Web Console to better customer support experiences.
-> 2. Enable VIP Conversation Entry to allow user to chat with your human support with parameter "__showConversationFlag__" setting to "__1__", you may use this method for any user or as a privilege for some users only.
+> 1. Use this method to launch your APP's customer service. Configure specific welcome text and AI story line in the AIHelp Web Console to better the customer support experiences.
+> 2. Enable VIP Conversation Entry to allow users' to chat with your human support team with parameter "__showConversationFlag__" setting to "__1__", you may use this method for any user or as a privilege for some users only.
 
-#### <h4 id="showElvaOP">3. Launch The Operation Interface, use`showElvaOP`</h4>
+#### <h4 id="showElvaOP">3. Launch The Operation Interface, use `showElvaOP`</h4>
 
-The operation module is useful when you want to present update, news, articles or any background information about your APP/Game to users. The AI Help
+The operation module is useful when you want to present updates, news, articles or any background information about your APP/Game to users. The AI Help
 
 	void showElvaOP(
 				string playerName,
@@ -303,16 +303,16 @@ OR
 - __playerName__: User Name in Game/APP
 - __playerUid__: Unique User ID
 - __serverId__: The Server ID
-- __showConversationFlag__: Should be "0" or "1". If set "1", the VIP conversation entry will be shown in the top right corner of the AI conversation interface.
-- __config__: Optional param for customized information. You can pass specific Tag information using sting list "elva-tags", see above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
-- __defaultTabIndex__: Optional. The index of the first tab to be shown when entering the operation interface. Default value is the left-most tab，if you would like to show the AI conversation interface(the right-most，set it to 999.
+- __showConversationFlag__: Should be "0" or "1". If set at "1", the VIP conversation entry will be shown in the top right hand side corner of the AI conversation interface.
+- __config__: Optional parameters for customized information. You can pass specific Tag information using sting list "elva-tags", see above coding examples. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
+- __defaultTabIndex__: Optional. The index of the first tab will be shown when entering the operation interface. Default value is the left-most tab，if you would like to show the AI conversation interface(the right-most side) set to 999.
 	
 ![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP_Android.png "showElvaOP")
 
 **Best Practice：**
 > 1. Use this API to present news, announcements, articles or any useful information to users/players. Configure and publish the information in AIHelp web console. 
 
-#### <h4 id="showFAQs">4. Display FAQs, use`showFAQs `</h4>
+#### <h4 id="showFAQs">4. Display FAQs, use `showFAQs `</h4>
 
 	void showFAQs();
 
@@ -340,14 +340,14 @@ OR
 
 **About Parameters：**
 
-- __config__: Optional param for customized information. You can pass specific Tag information using sting list "elva-tags", see above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
+- __config__: Optional parameters for customized information. You can pass specific Tag information using sting list "elva-tags", see the above coding examples. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 	
 ![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQs-EN-Android.png "showFAQs")
 
 **Best Practice：**
-> 1. Use this method to show FQAs about your APP/Game properly. Configure FAQs in AIHelp Web Console. Each FAQ can be categroized into a section. If the FAQs are many, you can also add Parent Sections to categorize sections to make things clear and organized. 
+> 1. Use this method to show FAQs about your APP/Game properly. Configure FAQs in AIHelp Web Console. Each FAQ can be categroized into a section. If the FAQs are great in number, you can also add Parent Sections to categorize sections to make things clear and organized. 
 
-#### <h4 id="showSingleFAQ">5. Show A Specific FAQ，use`showSingleFAQ`
+#### <h4 id="showSingleFAQ">5. Show A Specific FAQ，use `showSingleFAQ`
 </h4>
 
 	void showSingleFAQ (string faqId);
@@ -374,22 +374,22 @@ OR
 
 **About Parameters：**
 
-- __faqId__: The PublishID of the FAQ item, you can check it in [AIHelp Web Console](https://aihelp.net/elva): Find the FAQ in the FQA menu and copy its PublishID.
-- __config__: Optional param for customized information. You can pass specific Tag information using sting list "elva-tags", see above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
+- __faqId__: The PublishID of the FAQ item, you can check it at in [AIHelp Web Console](https://AIHelp.net/elva): Find the FAQ in the FAQ menu and copy its PublishID.
+- __config__: Optional parameters for customized information. You can pass specific Tag information using sting list "elva-tags", see the above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 	
-![showSingleFAQ](https://github.com/AIHELP-NET/Pictures/blob/master/showSingleFAQ-EN-Android.png "showSingleFAQ")
+![showSingleFAQ](https://github.com/AIHelp-NET/Pictures/blob/master/showSingleFAQ-EN-Android.png "showSingleFAQ")
 
 <h4 id="selfservice"></h4>
 
 **Self-Service：**
 
-If you configure the "self-service" link in FAQ's configuration, and set [UserId](#UserId), [UserName](#UserName), [ServerId](#ServerId) in SDK，then the FAQ shows with functional menu in the right-top cornor.
+If you configure the "self-service" link in the FAQ's configuration, and set [UserId](#UserId), [UserName](#UserName), [ServerId](#ServerId) in SDK，then the FAQ shows a functional menu in the right-top cornor.
 
 
 **Best Practice：**
 > 1. Use this method when you want to show a specific FAQ in a proper location of your APP/Game.
 
-#### <h4 id="setName">6. Set Your App's name for AIHelp SDK to display，use`setName`</h4>
+#### <h4 id="setName">6. Set Your App's name for AIHelp SDK to display，use `setName`</h4>
 
 	void setName(string game_name);
 
@@ -399,7 +399,7 @@ If you configure the "self-service" link in FAQ's configuration, and set [UserId
 
 **About Parameters：**
 
-- __game_name__: APP/Game name
+- __game_name__: APP/Game Name
 
 **Best Practice：**
 > 1. Use this method after SDK initialization.The App's name will display in the title bar of the customer service interface.
@@ -415,12 +415,12 @@ If you configure the "self-service" link in FAQ's configuration, and set [UserId
 
 **About Parameters：**
 
-- __playerUid__:Unique user ID
+- __playerUid__:Unique User ID
 
 **Best Practice：**
-> 1. Normally you don't need to use this method if you have passed user ID in other method. However, if you want to use FAQ's [Self-Service](#selfservice), then you must set the User Id first.
+> 1. Normally you don not need to use this method if you have passed the user ID in another method. However, if you want to use the FAQ's [Self-Service](#selfservice), then you must set the User Id first.
 
-#### <h4 id="UserName">8. Set User Name，use`setUserName`</h4>
+#### <h4 id="UserName">8. Set User Name，use `setUserName`</h4>
 
 	void setUserName(string userName);
 
@@ -434,9 +434,9 @@ If you configure the "self-service" link in FAQ's configuration, and set [UserId
 
 **Best Practice：**
 > 1. Use this method to set the user name, which will be shown in the web console's conversation page for the user. You can address the user with this name during the chat.
-> 2. Normally you don't need to use this method if you have passed user name in other method. However, if you want to use FAQ's [Self-Service](#selfservice), then you must set the User Id first.
+> 2. Normally you do not need to use this method if you have passed the user name in another method. However, if you want to use FAQ's [Self-Service](#selfservice), then you must set the User Id first.
 
-#### <h4 id="ServerId">9. Set Unique Server ID，use`setServerId`
+#### <h4 id="ServerId">9. Set Unique Server ID，use `setServerId`
 </h4>
 
 	void setServerId(int serverId);
@@ -447,12 +447,12 @@ If you configure the "self-service" link in FAQ's configuration, and set [UserId
 
 **About Parameters：**
 
-- __serverId:__ The unique server ID
+- __serverId:__ The Unique Server ID
 
 **Best Practice：**
-> 1. Normally you don't need to use this method if you have passed server ID in other method. However, if you want to use FAQ's [Self-Service](#selfservice), then you must set the User Id first.
+> 1. Normally you do not need to use this method if you have passed the server ID in another method. However, if you want to use the FAQ's [Self-Service](#selfservice), then you must set the User Id first.
 
-#### <h4 id="showConversation">10. Launch VIP chat console, use`showConversation`(need to set [UserName](#UserName))</h4>
+#### <h4 id="showConversation">10. Launch VIP Chat Console, use `showConversation`(need to set [UserName](#UserName))</h4>
 
 	void showConversation(
 				string playerUid,
@@ -485,19 +485,19 @@ or
 
 **About Parameters：**
 
-- __playerUid__:Unique user ID
-- __serverId:__ The unique server ID
-- __config__: Optional param for customized information. You can pass specific Tag information using sting list "elva-tags", see above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
+- __playerUid__:Unique User ID
+- __serverId:__ The Unique Server ID
+- __config__: Optional parameters for customized information. You can pass specific Tag information using vector elva-tags, see the above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 
 **Best Practice：**
-> 1. Normally you don't need to use this method unless you intend to allow users to enter VIP conversation without engaging with the AI chat. You may use this method as a privilege for some users.
+> 1. Normally you do not need to use this method unless you intend to allow users to enter VIP conversation without engaging with the AI chat. You may use this method as a privilege for some users.
 
-![showConversation](https://github.com/AIHELP-NET/Pictures/blob/master/showConversation-EN-Android.png "showConversation")
+![showConversation](https://github.com/AIHelp-NET/Pictures/blob/master/showConversation-EN-Android.png "showConversation")
 
 
-#### <h4 id="setSDKLanguage">11. Set SDK Lanague，use`setSDKLanguage`
+#### <h4 id="setSDKLanguage">11. Set SDK Lanague，use `setSDKLanguage`
 </h4>
-Set SDK Language will change the FAQs, Operational information, AI Chat and SDK display language. 
+Setting the SDK Language will change the FAQs, Operational information, AI Chat and SDK display language. 
 
 	void setSDKLanguage (string language);
 	
@@ -507,17 +507,17 @@ Set SDK Language will change the FAQs, Operational information, AI Chat and SDK 
 
 **About Parameters：**
 
-- __language:__ Standard Language Alias. For example: en is for English, zh_CN is for Simplified Chinese。More language label to check the AIHelp Web Console:"Settings"-->"Language"->Alias.
+- __language:__ Standard Language Alias. For example: en is for English, zh_CN is for Simplified Chinese。More language labels can be selected through AIHelp Web Console:"Settings"-->"Language"->Alias.
 
 ![language](https://github.com/AI-HELP/Docs-Screenshots/blob/master/Language-alias.png "Language Alias")
 
 **Best Practice：**
 > 1. Normally AIHelp will use the mobile's lanaguge configuration by default. If you intend to make a different language setting, you need to use this method right after SDK initialization.
-> 2. If your allow users to change APP language, then you need to call this method to make AIHelp the same lanague with your APP.
+> 2. If your allow users to change the APP language, then you need to use this method to make AIHelp the same lanague with your APP.
 
-#### 12. Set a different greeting story line.
+#### 12. Set a Different Greeting Story Line.
 
-If your APP provides multiple entries to AIHelp, and you intend to introduce different AI welcome text and story line to users from different entries, you can set config parameter in [showElva](#showElva) or [showElvaOP](#showElvaOP)： 
+If your APP provides multiple entries to AIHelp, and you intend to introduce different AI welcome texts and story lines to users from different entries, you can set config parameters within [showElva](#showElva) or [showElvaOP](#showElvaOP)： 
 
 **Coding Example：**
 	
@@ -549,9 +549,5 @@ Or
 
 
 **Best Practice：**
-> 1. Introduce different story lines to users from different source.
+> 1. Introduce different story lines to users from different sources.
 
-
-
-
-showConversationFlag
