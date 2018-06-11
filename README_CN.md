@@ -71,6 +71,10 @@ aihelp-plugin-unity.unitypackage
           <category android:name="android.intent.category.BROWSABLE" />
        </intent-filter>
     </activity>
+    <activity
+            android:name="com.ljoy.chatbot.QAWebActivity"
+            android:configChanges="orientation|screenSize|locale" >
+    </activity>
 
 如果你的Unity工程还没有AndroidManifest.xml, 可以参照SDK下载文件包含的中的AndroidManifest.xml创建一个。
 ### 4. 在你的Unity工程中初始化AIHelp SDK
@@ -125,6 +129,8 @@ __增加需要的权限:__
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This App may require your permission to access audio speaker for ingame customer service</string>
 	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This App may require your permission to access photo library for ingame customer service</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>This App may require your permission to access photo library for ingame customer service</string>
 
 
