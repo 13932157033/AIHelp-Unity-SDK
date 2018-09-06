@@ -81,7 +81,7 @@ aihelp-plugin-unity.unitypackage
 
 #### Android: 
 ```
-在你的游戏初始化时实例化ElvaChatServiceSDKAndroid 并且调用传入appKey, domain, appId:
+在你的游戏初始化时实例化ElvaChatServiceSDKAndroid, 然后调用init接口传入appKey, domain, appId:
 
 init(string appKey,string domain,string appId);
 ```
@@ -89,16 +89,18 @@ init(string appKey,string domain,string appId);
 ```
 ElvaChatServiceSDKAndroid的构造函数:
 
-	public ElvaChatServiceSDKAndroid(string appKey, string domain, string appId)
-	{
-		AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-		currentActivity = jc.GetStatic<AndroidJavaObject>("currentActivity");
-		sdk = new AndroidJavaClass("com.ljoy.chatbot.sdk.ELvaChatServiceSdk");
+public ElvaChatServiceSDKAndroid()
+{
+	AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+	currentActivity = jc.GetStatic<AndroidJavaObject>("currentActivity");
+	sdk = new AndroidJavaClass("com.ljoy.chatbot.sdk.ELvaChatServiceSdk");
+}
 
-		// pass the appkey, domain and appId of your own app, respectively
-		init(appKey, domain, appId);
-	}
+初始化init接口:
 
+public void init(string appKey,string domain,string appId){
+	sdk.CallStatic("init",currentActivity,appKey,domain,appId);
+}
 ```
 
 #### iOS:
@@ -109,13 +111,18 @@ init(string appKey,string domain,string appId);
 ```
 
 ```
-ElvaChatServiceSDKIOS的构造函数:
+ElvaChatServiceSDKIOS可以用默认构造函数
 
-	public ElvaChatServiceSDKIOS(string appKey, string domain, string appId)
-	{
-		// pass the appkey, domain and appId of your own app, respectively
-		init(appKey, domain, appId);
-	}
+public ElvaChatServiceSDKIOS()
+{
+
+}
+
+初始化init接口
+
+public void init(string appKey,string domain,string appId){
+	elvaInit(appKey,domain,appId);
+}
 
 ```
 __增加需要的权限:__
@@ -150,28 +157,88 @@ __增加需要的权限:__
 ```
 // 一定要在应用启动时进行初始化操作，不然会无法进入AIHelp智能客服系统。
 
-private void initAIHelpSDK()
+private static AIhelpService _instance;
+
+public static AIhelpService Instance
 {
-    aihelpService = new AIhelpServiceExample();
+    get{
+		if (_instance == null)
+		{
+			//Debug.LogError ("AIHelp service is not initialized!");
+
+			_instance = new AIhelpService ();
+		}
+		return _instance;
+    }
 }
-public AIhelpServiceExample()
+
+public void Initialize(string appkey, string domain, string appId)
 {
-	#if UNITY_ANDROID
-	if(Application.platform == RuntimePlatform.Android)
-	sdk = new ElvaChatServiceSDKAndroid(
-		"TRYELVA_app_5a6b4540bbee4d7280fda431700ed71a", 
-		"TryElva.AIHELP.NET", 
-		"TryElva_platform_14970be5-d3bf-4f91-8c70-c2065cc65e9a");
-	#endif
+	if (sdk != null)
+	{
+		sdk.init(appkey, domain, appId);
+		postInitSetting ();
+	}
+}
+
+public AIhelpService()
+{
+    #if UNITY_ANDROID
+      if(Application.platform == RuntimePlatform.Android)
+		sdk = new ElvaChatServiceSDKAndroid();
+    #endif
 	#if UNITY_IOS
-	if(Application.platform == RuntimePlatform.IPhonePlayer)
-	sdk = new ElvaChatServiceSDKIOS(
-		"TRYELVA_app_5a6b4540bbee4d7280fda431700ed71a",
-		"TryElva.AIHELP.NET", 
-		"TryElva_pf_ec28eb91dd7d463bb359fc53d43dcfd6");
+		if(Application.platform == RuntimePlatform.IPhonePlayer)
+		sdk = new ElvaChatServiceSDKIOS();
 	#endif
 }
 ```
+
+**注册初始化完成回调（可选）：**
+### <h4 id="registerInitializationCallback"> 初始化完成回调 `registerInitializationCallback`</h4>
+
+	void registerInitializationCallback(string gameObject);
+		
+**代码示例：**
+
+	public void RegisterInitializationCallback(string gameObject)
+	{
+		if(sdk != null)
+		{
+			sdk.registerInitializationCallback(gameObject);
+		}
+	}
+	
+
+**参数说明：**
+
+- gameObject: Unity 中gameObject的名字。可以通过获取transform.name动态传入。例如：
+
+```
+// 注册初始化回调
+AIhelpService.Instance.RegisterInitializationCallback (transform.name);
+
+// 初始化
+AIhelpService.Instance.Initialize ("TRYELVA_app_5a6b4540bbee4d7280fda431700ed71a", "TryElva.AIHELP.NET", appid);
+
+```	
+
+成功使用条件：
+
+- 必须在调用init接口之前调用
+- 必须在gameObject的脚本类中，实现回调方法`OnAIHelpInitialized，方法名字不可更改`，调用内容可自定义：
+
+```
+// 初始化回调函数实现
+public void OnAIHelpInitialized(string str)
+{	
+    // 以下内容可自定义
+	isAIHelpInited = true;
+	Debug.Log ("AIhelpInitCallback is called str:" + str);
+}
+```
+
+
 ---
 
 ### 5. 使用AIHelp 接口

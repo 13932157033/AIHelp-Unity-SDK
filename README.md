@@ -87,37 +87,51 @@ import the AIHelp unity sdk into your project
 
 #### Android: 
 
-Instantiate Class ElvaChatServiceSDKAndroid with appKey, domain, appId:
+```
+Instantiate ElvaChatServiceSDKAndroid, then call init with appKey, domain, appId:
 
+init(string appKey,string domain,string appId);
+```
 
 ```
-//ElvaChatServiceSDKAndroid Constructor:
+ElvaChatServiceSDKAndroid Constructor:
 
-	public ElvaChatServiceSDKAndroid(string appKey, string domain, string appId)
-	{
-		AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-		currentActivity = jc.GetStatic<AndroidJavaObject>("currentActivity");
-		sdk = new AndroidJavaClass("com.ljoy.chatbot.sdk.ELvaChatServiceSdk");
+public ElvaChatServiceSDKAndroid()
+{
+	AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+	currentActivity = jc.GetStatic<AndroidJavaObject>("currentActivity");
+	sdk = new AndroidJavaClass("com.ljoy.chatbot.sdk.ELvaChatServiceSdk");
+}
 
-		// pass the appkey, domain and appId of your own app, respectively
-		init(appKey, domain, appId);
-	}
 
+// init 
+
+public void init(string appKey,string domain,string appId){
+	sdk.CallStatic("init",currentActivity,appKey,domain,appId);
+}
 ```
 
 #### iOS:
 
-Instantiate Class ElvaChatServiceSDKIOS with appKey, domain, appId:
+```
+Instantiate ElvaChatServiceSDKIOS, then call init with appKey, domain, appId:
 
+init(string appKey,string domain,string appId);
+```
 
 ```
-//ElvaChatServiceSDKIOS  Constructor:
+ElvaChatServiceSDKIOS Constructor
 
-	public ElvaChatServiceSDKIOS(string appKey, string domain, string appId)
-	{
-		// pass the appkey, domain and appId of your own app, respectively
-		init(appKey, domain, appId);
-	}
+public ElvaChatServiceSDKIOS()
+{
+
+}
+
+// init 
+
+public void init(string appKey,string domain,string appId){
+	elvaInit(appKey,domain,appId);
+}
 
 ```
 
@@ -132,6 +146,8 @@ Please note that, you should add the below content into the Info.plist file of y
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This App may require your permission to access audio speaker for ingame customer service</string>
 	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This App may require your permission to access photo library for ingame customer service</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>This App may require your permission to access photo library for ingame customer service</string>
 	
 
@@ -153,26 +169,83 @@ If your company does not have an account, you can register an account at [AIHelp
 // Must be called during application/game initialization, otherwise you can't use AIHelp properly
 
 
-private void initAIHelpSDK()
+private static AIhelpService _instance;
+
+public static AIhelpService Instance
 {
-    aihelpService = new AIHelpServiceExample();
+    get{
+		if (_instance == null)
+		{
+			//Debug.LogError ("AIHelp service is not initialized!");
+
+			_instance = new AIhelpService ();
+		}
+		return _instance;
+    }
 }
-public AIHelpServiceExample()
+
+public void Initialize(string appkey, string domain, string appId)
 {
-	#if UNITY_ANDROID
-	if(Application.platform == RuntimePlatform.Android)
-	sdk = new ElvaChatServiceSDKAndroid(
-		"TRYELVA_app_5a6b4540bbee4d7280fda431700ed71a", 
-		"TryElva.AIHELP.NET", 
-		"TryElva_platform_14970be5-d3bf-4f91-8c70-c2065cc65e9a");
-	#endif
+	if (sdk != null)
+	{
+		sdk.init(appkey, domain, appId);
+		postInitSetting ();
+	}
+}
+
+public AIhelpService()
+{
+    #if UNITY_ANDROID
+      if(Application.platform == RuntimePlatform.Android)
+		sdk = new ElvaChatServiceSDKAndroid();
+    #endif
 	#if UNITY_IOS
-	if(Application.platform == RuntimePlatform.IPhonePlayer)
-	sdk = new ElvaChatServiceSDKIOS(
-		"TRYELVA_app_5a6b4540bbee4d7280fda431700ed71a",
-		"TryElva.AIHELP.NET", 
-		"TryElva_pf_ec28eb91dd7d463bb359fc53d43dcfd6");
+		if(Application.platform == RuntimePlatform.IPhonePlayer)
+		sdk = new ElvaChatServiceSDKIOS();
 	#endif
+}
+```
+
+**Register Initialization Callback (optional）：**
+### <h4 id="registerInitializationCallback"> Register Initialization Callback `registerInitializationCallback`</h4>
+
+	void registerInitializationCallback(string gameObject);
+		
+**Code Example：**
+
+	public void RegisterInitializationCallback(string gameObject)
+	{
+		if(sdk != null)
+		{
+			sdk.registerInitializationCallback(gameObject);
+		}
+	}
+	
+
+**About Parameters：**
+
+- gameObject: The name of GameObject in your Unity Scene, you can use transform.name to get the GameObject during runtime. For example：
+
+```
+// Register Callback
+AIhelpService.Instance.RegisterInitializationCallback (transform.name);
+
+// Do Initialization
+AIhelpService.Instance.Initialize ("TRYELVA_app_5a6b4540bbee4d7280fda431700ed71a", "TryElva.AIHELP.NET", appid);
+
+```	
+
+Prerequisite：
+
+- Must register callback before initialization.
+- Must define and implement callback method `OnAIHelpInitialized`in the GameObject's script class：
+
+```
+// Implement initialization callback
+public void OnAIHelpInitialized(string str)
+{	
+    // add code here
+	Debug.Log ("AIhelpInitCallback is called str:" + str);
 }
 ```
 

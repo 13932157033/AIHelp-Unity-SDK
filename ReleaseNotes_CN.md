@@ -1,6 +1,12 @@
 # AIHELP Android SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README_CN.md)
 
+## 1.4.1
+1. FAQ搜索栏
+2. 初始化完成回调
+3. 支持图片放大等操作
+4. Bug修复等
+
 ## 1.3.6
 1. 实时客服沟通接口showVIPChat
 

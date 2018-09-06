@@ -1,6 +1,12 @@
 # AIHELP Android SDK version update
 [SDK Integration Guide](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README.md)
 
+## 1.4.1
+1. FAQ SearchBar (only support in Portrait screen)
+2. Initialization callback
+3. Support pic zoom-out/zoom-in
+4. Bug Fix
+
 ## 1.3.6
 1. Add showVIPChat, showStoreReview and setFcmToken Interface
 
