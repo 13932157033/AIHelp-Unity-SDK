@@ -1,4 +1,3 @@
-[查看Unity 示例工程](https://github.com/AI-HELP/Unity_Demo)
 
 ## 接入说明
 ### 1. 下载AIhelp Unity SDK：
