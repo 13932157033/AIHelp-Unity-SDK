@@ -1,5 +1,11 @@
 # AIHELP Android SDK version update
 [SDK Integration Guide](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README.md)
+## 1.4.2
+iOS-Adding armv7s architecture support
+iOS-Restoring link free response to _blank type jump
+iOS-Customer service input limit increased to 800
+iOS-Perfect the function of reward and reward
+iOS-Front end operation module
 
 ## 1.4.1
 1. FAQ SearchBar (only support in Portrait screen)

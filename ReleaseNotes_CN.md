@@ -1,6 +1,13 @@
 # AIHELP Android SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README_CN.md)
 
+## 1.4.2
+ios增加armv7s架构支持
+ios修复链接为_blank类型的跳转无响应问题
+ios客服输入限制提升为800
+ios完善打赏功能
+ios加入运营模块和机器人客诉模块的前端化
+
 ## 1.4.1
 1. FAQ搜索栏
 2. 初始化完成回调
