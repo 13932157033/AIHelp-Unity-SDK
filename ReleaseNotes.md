@@ -1,11 +1,19 @@
-# AIHELP Android SDK version update
-[SDK Integration Guide](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README.md)
+# AIHELP UNITY SDK Release Notes
+[SDK Integration Guide](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README.md)
+
+
+## 1.4.3
+1. Initialization Data Fetch Optimization
+2. iOS Chatbot response Optimization
+3. Chatbot rate Optimization
+4. FAQ Contact Us Optimization
+
 ## 1.4.2
-iOS-Adding armv7s architecture support
-iOS-Restoring link free response to _blank type jump
-iOS-Customer service input limit increased to 800
-iOS-Perfect the function of reward and reward
-iOS-Front end operation module
+1. iOS-Adding armv7s architecture support
+2. iOS-Restoring link free response to _blank type jump
+3. iOS-Customer service input limit increased to 800
+4. iOS-Perfect the function of reward and reward
+5. iOS-Front end operation module
 
 ## 1.4.1
 1. FAQ SearchBar (only support in Portrait screen)
