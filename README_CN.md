@@ -398,7 +398,9 @@ public void OnAIHelpInitialized(string str)
 			tags.Add ("elva-tags", tag);
 			Dictionary<string, object> config = new Dictionary<string, object> ();
 			config.Add ("elva-custom-metadata", tags);
+			config.Add ("showContactButtonFlag", "1"); // 显示可以从FAQ列表右上角进入机器人客服
 			config.Add("showConversationFlag", "1"); // 显示可以从FAQ进入人工客服
+
 			sdk.showFAQs(config);
         }
     }

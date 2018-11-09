@@ -404,7 +404,8 @@ OR
 			tags.Add ("elva-tags", tag);
 			Dictionary<string, object> config = new Dictionary<string, object> ();
 			config.Add ("elva-custom-metadata", tags);
-			config.Add("showConversationFlag", "1"); // 显示可以从FAQ进入人工客服
+			config.Add ("showContactButtonFlag", "1"); // Show Contact us in the top right of FAQ list
+			config.Add ("showConversationFlag", "1"); // Show Interface to contact manual reply from FAQ page
 			sdk.showFAQs(config);
         }
     }
