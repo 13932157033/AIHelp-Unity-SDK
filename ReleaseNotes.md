@@ -2,6 +2,10 @@
 [SDK Integration Guide](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README.md)
 
 
+## 1.4.3.1(iOS)
+1. Fix crash when photo library is opened during screen rotation. 
+2. Fix FAQ page display area issue in iPhoneX.
+
 ## 1.4.3
 1. Initialization Data Fetch Optimization
 2. iOS Chatbot response Optimization

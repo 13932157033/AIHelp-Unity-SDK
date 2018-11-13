@@ -1,6 +1,10 @@
 # AIHELP UNITY SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README_CN.md)
 
+## 1.4.3.1(iOS)
+1. iOS修复在横竖屏旋转时调用相册可能会崩溃的情况。
+2. 修复在iPhoneX上faq页面显示上下区域不对齐的情况。
+
 ## 1.4.3
 1. 优化初始化数据获取逻辑
 2. ios机器人响应优化
