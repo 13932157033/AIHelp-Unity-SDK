@@ -1,9 +1,10 @@
 # AIHELP UNITY SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README_CN.md)
 
-## 1.4.3.1(iOS)
+## 1.4.3.1
 1. 修复在iOS12.1上发现横竖屏切换时打开相册后会崩溃的情况。
 2. 修复在iPhoneX上faq页面显示上下区域不对齐的情况。
+3. 修复在Android上首次动态获取相册访问权限后弹出SD卡不存在的告警
 
 ## 1.4.3
 1. 优化初始化数据获取逻辑

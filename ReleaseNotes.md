@@ -2,9 +2,11 @@
 [SDK Integration Guide](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README.md)
 
 
-## 1.4.3.1(iOS)
-1. Fix crash when photo library is opened during screen rotation. 
+## 1.4.3.1
+1. Fix crash when photo library is opened during screen rotation in iOS 12.1
 2. Fix FAQ page display area issue in iPhoneX.
+3. Fix an incorrect alert message after user authorizes android photo
+library permission on the fly
 
 ## 1.4.3
 1. Initialization Data Fetch Optimization
