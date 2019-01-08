@@ -2,6 +2,12 @@
 [SDK Integration Guide](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README.md)
 
 
+## 1.4.3.3(latest)
+1. Fix a problem with retrieving non-English language data.
+
+## 1.4.3.2
+1. Fix chatbot Matching Timeout Problem undert certain condition of 32-bit iPhone
+
 ## 1.4.3.1
 1. Fix crash when photo library is opened during screen rotation in iOS 12.1
 2. Fix FAQ page display area issue in iPhoneX.

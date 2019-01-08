@@ -1,6 +1,13 @@
 # AIHELP UNITY SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README_CN.md)
 
+
+## 1.4.3.3(latest)
+1. 修复非en语言数据拉取成功，且数据条数为0时，重新拉取en数据仍为空问题
+
+## 1.4.3.2 
+1. 修复32位iphone机型在特定情况下机器人回答匹配超时问题
+
 ## 1.4.3.1
 1. 修复在iOS12.1上发现横竖屏切换时打开相册后会崩溃的情况。
 2. 修复在iPhoneX上faq页面显示上下区域不对齐的情况。
