@@ -1,8 +1,10 @@
 # AIHELP UNITY SDK Release Notes
 [SDK Integration Guide](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README.md)
 
+## 1.4.3.4(latest)
+1. Modify Iranian proxy IP address(Android&IOS)
 
-## 1.4.3.3(latest)
+## 1.4.3.3
 1. Fix a problem with retrieving non-English language data.
 
 ## 1.4.3.2
