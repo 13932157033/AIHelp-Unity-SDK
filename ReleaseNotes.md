@@ -1,7 +1,10 @@
 # AIHELP UNITY SDK Release Notes
 [SDK Integration Guide](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README.md)
 
-## 1.4.3.4(latest)
+## 1.4.3.5(latest)
+1. Fix the failure of opening album under iOS 10 when no vertical screen permission is available
+
+## 1.4.3.4
 1. Modify Iranian proxy IP address(Android&IOS)
 
 ## 1.4.3.3

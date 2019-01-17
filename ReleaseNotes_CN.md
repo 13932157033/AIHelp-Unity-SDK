@@ -1,8 +1,11 @@
 # AIHELP UNITY SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README_CN.md)
 
-## 1.4.3.4(latest)
-1.修改伊朗代理IP地址(Android&IOS)
+## 1.4.3.5(latest)
+1. 修复无竖屏权限时，在iOS 10下打开相册失败的问题
+
+## 1.4.3.4
+1. 修改伊朗代理IP地址(Android&IOS)
 
 ## 1.4.3.3
 1. 修复非en语言数据拉取成功，且数据条数为0时，重新拉取en数据仍为空问题
