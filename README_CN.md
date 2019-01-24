@@ -249,9 +249,9 @@ public void OnAIHelpInitialized(string str)
 |:------------- |:---------------|:---------------|
 | **[showElva](#showElva)**      | 启动机器人客服聊天界面| 
 | **[showElvaOP](#showElvaOP)** | 启动运营界面| 需配置运营模块|
-| **[showFAQs](#showFAQs)** | 展示全部FAQ菜单|需配置FAQ|
-|**[showConversation](#showConversation)**|启动人工客服聊天界面| 需调用setUserName 和setUserId|
-| **[showSingleFAQ](#showSingleFAQ)** | 展示单条FAQ|需配置FAQ|
+| **[showFAQs](#showFAQs)** | 展示全部FAQ菜单|需配置FAQ,需调用[setUserName](#setUserName) 和[setUserId](#setUserId)|
+|**[showConversation](#showConversation)**|启动人工客服聊天界面|需配置FAQ,需调用[setUserName](#setUserName) 和[setUserId](#setUserId)|
+| **[showSingleFAQ](#showSingleFAQ)** | 展示单条FAQ|需配置FAQ,需调用[setUserName](#setUserName) 和[setUserId](#setUserId)|
 | **[setName](#setName)** | 设置游戏名称|在初始化之后调用|
 | **[setUserName](#UserName)** | 设置玩家(用户)名称|
 | **[setUserId](#UserId)** | 设置玩家(用户)ID|

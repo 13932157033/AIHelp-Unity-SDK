@@ -257,9 +257,9 @@ public void OnAIHelpInitialized(string str)
 |:------------- |:---------------|:---------------|
 | **[showElva](#showElva)**      | Launch AI Conversation Interface| 
 | **[showElvaOP](#showElvaOP)** | Launch Operation Interface| Need to configure Operation sections|
-| **[showFAQs](#showFAQs)** | Show all FAQs by Sections|Need to configure FAQs|
-|**[showConversation](#showConversation)**|Launch VIP Conversation Interface| Need to setUserName and setUserId |
-| **[showSingleFAQ](#showSingleFAQ)** | Show Single FAQ|Need to configure FAQ|
+| **[showFAQs](#showFAQs)** | Show all FAQs by Sections|Need to configure FAQs，Need to setUserName and setUserId|
+|**[showConversation](#showConversation)**|Launch VIP Conversation Interface| Need to configure FAQs，Need to setUserName and setUserId |
+| **[showSingleFAQ](#showSingleFAQ)** | Show Single FAQ|Need to configure FAQ，Need to setUserName and setUserId|
 | **[setName](#setName)** | Set APP/Game Name|Use it after initialization|
 | **[setUserName](#UserName)** | Set User In-App Name|
 | **[setUserId](#UserId)** | Set Unique User ID|
