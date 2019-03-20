@@ -1,7 +1,16 @@
 # AIHELP UNITY SDK Release Notes
 [SDK Integration Guide](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README.md)
 
-## 1.4.3.5(latest)
+## 1.4.4.0 (latest)
+1. Increase the customer service name of the manual interface
+2. Increase parent sorting
+3. Client evaluation options are customizable, multiple choices, and allow players to enter text
+4. Robotic complaints are subdivided into 8 categories.
+5. Form submission success will be seen on the robot complaint
+6. Form support uploads multiple screenshots
+7. FAQ page click ‘NO’ to display the customer service portal
+
+## 1.4.3.5
 1. Fix the failure of opening album under iOS 10 when no vertical screen permission is available
 
 ## 1.4.3.4
