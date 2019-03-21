@@ -261,8 +261,8 @@ public void OnAIHelpInitialized(string str)
 |**[showConversation](#showConversation)**|Launch VIP Conversation Interface| Need to configure FAQs，Need to setUserName and setUserId |
 | **[showSingleFAQ](#showSingleFAQ)** | Show Single FAQ|Need to configure FAQ，Need to setUserName and setUserId|
 | **[setName](#setName)** | Set APP/Game Name|Use it after initialization|
-| **[setUserName](#UserName)** | Set User In-App Name|
-| **[setUserId](#UserId)** | Set Unique User ID|
+| **[setUserName](#UserName)** | Set User In-App Name| If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
+| **[setUserId](#UserId)** | Set Unique User ID| If the userid is not available, the empty string "" is passed, and a unique device id is generated.
 | **[setSDKLanguage](#setSDKLanguage)** | Set SDK Language|
 
 
@@ -479,11 +479,11 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 #### <h4 id="UserId">7. Set the Unique User ID, use `setUserId`</h4>
 
 
-	void setUserId(string userId);
+	void setUserId(string userId); If the userid is not available, the empty string "" is passed, and a unique device id is generated.
 
 **Coding Example：**
 
-	sdk.setUserId("123ABC567DEF");
+	sdk.setUserId("123ABC567DEF"); If the userid is not available, the empty string "" is passed, and a unique device id is generated.
 
 **About Parameters：**
 
@@ -494,11 +494,11 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 
 #### <h4 id="UserName">8. Set User Name，use `setUserName`</h4>
 
-	void setUserName(string userName);
+	void setUserName(string userName); If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
 
 **Coding Example：**
 
-	sdk.setUserName ("PLAYER_NAME");
+	sdk.setUserName ("PLAYER_NAME");If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
 
 **About Parameters：**
 
@@ -550,7 +550,7 @@ or
 			tags.Add ("elva-tags", tag);
 			Dictionary<string, object> config = new Dictionary<string, object> ();
 			config.Add ("elva-custom-metadata", tags);
-			sdk.setUserName("PLAYER_NAME");
+			sdk.setUserName("PLAYER_NAME"); If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
 			sdk.showConversation(faqId, config);
         }
     }

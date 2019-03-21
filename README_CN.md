@@ -253,8 +253,8 @@ public void OnAIHelpInitialized(string str)
 |**[showConversation](#showConversation)**|启动人工客服聊天界面|需配置FAQ,需调用[setUserName](#setUserName) 和[setUserId](#setUserId)|
 | **[showSingleFAQ](#showSingleFAQ)** | 展示单条FAQ|需配置FAQ,需调用[setUserName](#setUserName) 和[setUserId](#setUserId)|
 | **[setName](#setName)** | 设置游戏名称|在初始化之后调用|
-| **[setUserName](#UserName)** | 设置玩家(用户)名称|
-| **[setUserId](#UserId)** | 设置玩家(用户)ID|
+| **[setUserName](#UserName)** | 设置玩家(用户)名称| 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+| **[setUserId](#UserId)** | 设置玩家(用户)ID| 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
 | **[setSDKLanguage](#setSDKLanguage)** | 设置SDK语言|
 
 
@@ -473,11 +473,11 @@ public void OnAIHelpInitialized(string str)
 
 #### <h4 id="UserId">7. 设置用户唯一ID信息，调用`setUserId`方法</h4>
 
-	void setUserId(string userId);
+	void setUserId(string userId); 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
 
 **代码示例：**
 
-	sdk.setUserId("123ABC567DEF");
+	sdk.setUserId("123ABC567DEF"); 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
 
 **参数说明：**
 
@@ -488,11 +488,11 @@ public void OnAIHelpInitialized(string str)
 
 #### <h4 id="UserName">8. 设置用户名称信息，调用`setUserName`方法</h4>
 
-	void setUserName(string userName);
+	void setUserName(string userName); 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
 
 **代码示例：**
 
-	sdk.setUserName ("PLAYER_NAME");
+	sdk.setUserName ("PLAYER_NAME"); 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
 
 **参数说明：**
 
@@ -544,7 +544,7 @@ public void OnAIHelpInitialized(string str)
 			tags.Add ("elva-tags", tag);
 			Dictionary<string, object> config = new Dictionary<string, object> ();
 			config.Add ("elva-custom-metadata", tags);
-			sdk.setUserName("PLAYER_NAME");
+			sdk.setUserName("PLAYER_NAME"); 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
 			sdk.showConversation(faqId, config);
         }
     }
