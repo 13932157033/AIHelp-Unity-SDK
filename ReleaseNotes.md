@@ -5,7 +5,7 @@
 1. faqActivity Start logic adaptation part of the model(Android)
 2. Repair part of user form can not select multiple pictures.(IOS)
 3. Default Mobile Device Language without SetSDK Language Interface.(IOS)
-
+4. Fix the problem that some models of iOS version 9.0 can't call out the system album.(IOS)
 ## 1.4.4.0 
 1. Increase the customer service name of the manual interface
 2. Increase parent sorting
