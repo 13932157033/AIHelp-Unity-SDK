@@ -1,7 +1,12 @@
 # AIHELP UNITY SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README_CN.md)
 
-## 1.4.4.0 (latest)
+## 1.4.4.1 (最新)
+1. faqActivity启动逻辑适配部分机型(Android)
+2. 修复部分用户表单无法选择多张图片(IOS)
+3. 不使用setSDKLanguage接口，默认手机设备语言(IOS)
+
+## 1.4.4.0
 1.增加人工界面的客服名称
 2.增加父分类排序
 3.客户端评价选项自定义，可多选，并且可以允许玩家输入文本
