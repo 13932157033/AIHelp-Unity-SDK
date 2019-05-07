@@ -1,7 +1,10 @@
 # AIHELP UNITY SDK Release Notes
 [SDK Integration Guide](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README.md)
 
-## 1.4.4.1 (latest)
+## 1.4.4.2
+1. iOS: repair unity project horizontal screen game + vertical screen lock open, resulting in device direction and screen interface direction inconsistent (i.e. sometimes horizontal screen and sometimes vertical screen)
+
+## 1.4.4.1
 1. faqActivity Start logic adaptation part of the model(Android)
 2. Repair part of user form can not select multiple pictures.(IOS)
 3. Default Mobile Device Language without SetSDK Language Interface.(IOS)

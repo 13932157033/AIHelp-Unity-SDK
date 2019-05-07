@@ -1,7 +1,10 @@
 # AIHELP UNITY SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README_CN.md)
 
-## 1.4.4.1 (最新)
+## 1.4.4.2
+1. iOS:修复unity工程中横屏游戏+竖屏锁开启，引起的设备方向与屏幕接口方向不一致（即：有时横屏有时竖屏）
+
+## 1.4.4.1
 1. faqActivity启动逻辑适配部分机型(Android)
 2. 修复部分用户表单无法选择多张图片(IOS)
 3. 不使用setSDKLanguage接口，默认手机设备语言(IOS)
