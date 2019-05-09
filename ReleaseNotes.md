@@ -1,6 +1,9 @@
 # AIHELP UNITY SDK Release Notes
 [SDK Integration Guide](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README.md)
 
+## 1.4.4.2(latest)
+1. android: Fix WebActivity not started issue
+
 ## 1.4.4.2
 1. iOS: repair unity project horizontal screen game + vertical screen lock open, resulting in device direction and screen interface direction inconsistent (i.e. sometimes horizontal screen and sometimes vertical screen)
 
