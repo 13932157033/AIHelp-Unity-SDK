@@ -1,6 +1,12 @@
 # AIHELP UNITY SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README_CN.md)
 
+## 1.4.4.3
+1. iOS:修复人工页面显示打赏按钮显示异常
+
+## 1.4.4.2
+1. android:修复WebActivity未启动问题
+
 ## 1.4.4.2
 1. iOS:修复unity工程中横屏游戏+竖屏锁开启，引起的设备方向与屏幕接口方向不一致（即：有时横屏有时竖屏）
 
