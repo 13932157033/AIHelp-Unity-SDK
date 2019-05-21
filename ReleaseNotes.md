@@ -1,10 +1,14 @@
 # AIHELP UNITY SDK Release Notes
 [SDK Integration Guide](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README.md)
 
+<<<<<<< HEAD
 ## 1.4.4.3
 1. iOS:Repair the manual page display reward button display abnormal
 
 ## 1.4.4.2
+=======
+## 1.4.4.2(latest)
+>>>>>>> 97a6a5e99716bf55eb5cca9adf918715b278167b
 1. android: Fix WebActivity not started issue
 
 ## 1.4.4.2
