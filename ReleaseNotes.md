@@ -3,6 +3,8 @@
 
 ## 1.4.4.4
 1. Increase automatic reconnection(IOS&Android)
+2. iOS: In versions below IOS 10,Fix text links need long press
+3. iOS: Album supports iCloud update
 
 ## 1.4.4.3
 1. iOS:Repair the manual page display reward button display abnormal
