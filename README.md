@@ -2,7 +2,7 @@
 
 ## AIHelp SDK Integration Guide
 ### 1. Download The AIHelp Unity SDK：
-Select "Clone or download" to download the SDK file in the github page, unzip the compressed file and get **aihelp-plugin-unity.unitypackage**
+Click "Clone or download" to download the SDK file in the github page, unzip the compressed file and get **aihelp-plugin-unity.unitypackage**
 
 | File name | Description |
 |:------------- |:---------------|
@@ -18,7 +18,7 @@ Or find aihelp-plugin-unity.unitypackage and double-click to open it,
 import the AIHelp unity sdk into your project
 
 
-	Note：After you import the sdk, don not change the files location under 
+	Note：After you import the sdk, do not change the files location under 
 	Plugins/Android and Plugins/iOS, unless you have a valid reason.
 	
 	Changing file location may result in an integration failure.
@@ -80,6 +80,8 @@ import the AIHelp unity sdk into your project
     <meta-data
        android:name="com.google.android.gms.version"
        android:value="@integer/google_play_services_version" />
+
+If your project doesn't have AndroidManifest.xml, please create one in reference with AndroidManifest.xml you downloaded in SDK
 
 ### 4. Initialize AIHelp SDK in your Project
 
@@ -153,9 +155,9 @@ Please note that, you should add the below content into the Info.plist file of y
 
 | Parameters | Description |
 |:------------- |:---------------|
-| appKey    | Your unique developer API Key|
-| domain     | Your AIHelp domain name. For example: foo.AIHelp.NET|
-| appId     | A unique ID assigned to your app.| 
+| appKey    | Your unique developer API Key, Obtained from the AIHelp web management system|
+| domain     | Your AIHelp domain name, Obtained from the AIHelp web management system. For example: foo.AIHelp.NET|
+| appId     | A unique ID assigned to your app, Obtained from the AIHelp web management system| 
 
 Note: Please log into [AIHelp Web Console](https://console.aihelp.net/elva) with your registration email account to find the __appKey__, __domain__ and __appId__ In the _Application_ page of the _Settings_ Menu. 
 If your company does not have an account, you can register an account at [AIHelp Website](http://aihelp.net/index.html)
