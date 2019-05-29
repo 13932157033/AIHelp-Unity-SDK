@@ -3,7 +3,7 @@
 
 ## 1.4.4.4
 1. Increase automatic reconnection(IOS&Android)
-2. iOS: In versions below IOS 10,Fix text links need long press
+2. iOS: In versions below IOS 10,Fix hyperlink text clicks in the story line need to be long pressed
 3. iOS: Album supports iCloud update
 
 ## 1.4.4.3
