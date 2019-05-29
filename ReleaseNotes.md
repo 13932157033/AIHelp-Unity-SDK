@@ -1,6 +1,9 @@
 # AIHELP UNITY SDK Release Notes
 [SDK Integration Guide](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README.md)
 
+## 1.4.4.4
+1. Increase automatic reconnection(IOS&Android)
+
 ## 1.4.4.3
 1. iOS:Repair the manual page display reward button display abnormal
 

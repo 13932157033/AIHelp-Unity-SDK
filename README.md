@@ -75,11 +75,10 @@ import the AIHelp unity sdk into your project
           <category android:name="android.intent.category.BROWSABLE" />
        </intent-filter>
     </activity>
-**c. Add Meta Data (if using 'appindexing')**      
-
-    <meta-data
-       android:name="com.google.android.gms.version"
-       android:value="@integer/google_play_services_version" />
+    <activity
+            android:name="com.ljoy.chatbot.QAWebActivity"
+            android:configChanges="orientation|screenSize|locale" >
+    </activity>
 
 If your project doesn't have AndroidManifest.xml, please create one in reference with AndroidManifest.xml you downloaded in SDK
 

@@ -1,6 +1,9 @@
 # AIHELP UNITY SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README_CN.md)
 
+## 1.4.4.4
+1. 增加自动重连(IOS&Android)
+
 ## 1.4.4.3
 1. iOS:修复人工页面显示打赏按钮显示异常
 
