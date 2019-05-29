@@ -1,14 +1,10 @@
 # AIHELP UNITY SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README_CN.md)
 
-<<<<<<< HEAD
 ## 1.4.4.3
 1. iOS:修复人工页面显示打赏按钮显示异常
 
 ## 1.4.4.2
-=======
-## 1.4.4.2(最新)
->>>>>>> 97a6a5e99716bf55eb5cca9adf918715b278167b
 1. android:修复WebActivity未启动问题
 
 ## 1.4.4.2
