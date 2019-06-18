@@ -80,8 +80,9 @@ aihelp-plugin-unity.unitypackage
 
 #### Android: 
 ```
-在你的游戏初始化时实例化ElvaChatServiceSDKAndroid, 然后调用init接口传入appKey, domain, appId:
-
+甲方有义务按照乙方接入文档说明的正常接入方式和调用方式使用乙方服务，
+如甲方通过技术手段影响乙方计费，乙方有权在通知甲方的同时立即单方面终止服务，并要求甲方承担责任。
+在您的应用启动的时候 实例化ElvaChatServiceSDKAndroid, 然后调用init接口传入appKey, domain, appId:
 init(string appKey,string domain,string appId);
 ```
 
