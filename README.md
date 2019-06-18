@@ -114,6 +114,7 @@ public void init(string appKey,string domain,string appId){
 
 ```
 Instantiate ElvaChatServiceSDKIOS, then call init with appKey, domain, appId:
+(Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents. If Party A uses any technical method to influence Party B's billing, Party B will have the right to notify Party A while unilaterally terminating the service immediately and ask Party A to assume responsibility for infulencing the billing of Party B.)
 
 init(string appKey,string domain,string appId);
 ```
