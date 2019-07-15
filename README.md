@@ -162,7 +162,7 @@ Note: Please log into [AIHelp Web Console](https://console.aihelp.net/elva) with
 If your company does not have an account, you can register an account at [AIHelp Website](http://aihelp.net/index.html)
 
 
-**Coding Example：**
+**Coding Example：**<br />
 **Note:Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents. If Party A uses any technical method to influence Party B's billing, Party B will have the right to notify Party A while unilaterally terminating the service immediately and ask Party A to assume responsibility for infulencing the billing of Party B.**
 ```
 // Must be called during application/game initialization, otherwise you can't use AIHelp properly
