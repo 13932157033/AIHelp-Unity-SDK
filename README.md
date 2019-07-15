@@ -82,14 +82,14 @@ import the AIHelp unity sdk into your project
 
 If your project doesn't have AndroidManifest.xml, please create one in reference with AndroidManifest.xml you downloaded in SDK
 
-### 4. Initialize AIHelp SDK in your Project
+### 4. SDK initialization（Must be called during application initialization, otherwise you can't use AIHelp properly）
 
 #### Android: 
 
-**Note: Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents. 
+**Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents. 
 If Party A uses any technical method to influence Party B's billing, 
 Party B will have the right to notify Party A while unilaterally terminating the service immediately 
-And ask Party A to assume responsibility for infulencing the billing of Party B.
+And ask Party A to assume responsibility for infulencing the billing of Party B.<br />
 When activiting your app, You must use Instantiate ElvaChatServiceSDKAndroid, then call init with appKey, domain, appId , 
 otherwise you can't use AIHelp service properly. 
 init(string appKey,string domain,string appId);**
@@ -114,7 +114,7 @@ public void init(string appKey,string domain,string appId){
 
 #### iOS:
 
-**Note:Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents. If Party A uses any technical method to influence Party B's billing, Party B will have the right to notify Party A while unilaterally terminating the service immediately and ask Party A to assume responsibility for infulencing the billing of Party B.
+**Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents. If Party A uses any technical method to influence Party B's billing, Party B will have the right to notify Party A while unilaterally terminating the service immediately and ask Party A to assume responsibility for infulencing the billing of Party B.<br />
 Instantiate ElvaChatServiceSDKIOS, then call init with appKey, domain, appId:
 init(string appKey,string domain,string appId);**
 
@@ -163,7 +163,8 @@ If your company does not have an account, you can register an account at [AIHelp
 
 
 **Coding Example：**<br />
-**Note:Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents. If Party A uses any technical method to influence Party B's billing, Party B will have the right to notify Party A while unilaterally terminating the service immediately and ask Party A to assume responsibility for infulencing the billing of Party B.**
+**Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents. If Party A uses any technical method to influence Party B's billing, Party B will have the right to notify Party A while unilaterally terminating the service immediately and ask Party A to assume responsibility for infulencing the billing of Party B.**
+
 ```
 // Must be called during application/game initialization, otherwise you can't use AIHelp properly
 

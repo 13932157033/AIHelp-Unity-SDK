@@ -76,10 +76,10 @@ aihelp-plugin-unity.unitypackage
     </activity>
 
 如果你的Unity工程还没有AndroidManifest.xml, 可以参照SDK下载文件包含的中的AndroidManifest.xml创建一个。
-### 4. 在你的Unity工程中初始化AIHelp SDK
+### 4. SDK初始化（必须在应用启动阶段调用）
 
 #### Android: 
-**注意：甲方有义务按照乙方接入文档说明的正常接入方式和调用方式使用乙方服务，
+**甲方有义务按照乙方接入文档说明的正常接入方式和调用方式使用乙方服务，
 如甲方通过技术手段影响乙方计费，乙方有权在通知甲方的同时立即单方面终止服务，并要求甲方承担责任。<br />
 在您的应用启动的时候 实例化ElvaChatServiceSDKAndroid, 然后调用init接口传入appKey, domain, appId:
 init(string appKey,string domain,string appId);**
@@ -102,7 +102,7 @@ public void init(string appKey,string domain,string appId){
 ```
 
 #### iOS:
-**注意：甲方有义务按照乙方接入文档说明的正常接入方式和调用方式使用乙方服务，如甲方通过技术手段影响乙方计费，乙方有权在通知甲方的同时立即单方面终止服务，并要求甲方承担责任。<br />
+**甲方有义务按照乙方接入文档说明的正常接入方式和调用方式使用乙方服务，如甲方通过技术手段影响乙方计费，乙方有权在通知甲方的同时立即单方面终止服务，并要求甲方承担责任。<br />
 在你的游戏初始化时实例化ElvaChatServiceSDKIOS 并且调用传入appKey, domain, appId:
 init(string appKey,string domain,string appId);**
 
@@ -149,7 +149,7 @@ __增加需要的权限:__
 
 
 **初始化代码示例：** <br />
-**注意：甲方有义务按照乙方接入文档说明的正常接入方式和调用方式使用乙方服务，
+**甲方有义务按照乙方接入文档说明的正常接入方式和调用方式使用乙方服务，
 如甲方通过技术手段影响乙方计费，乙方有权在通知甲方的同时立即单方面终止服务，并要求甲方承担责任。**
 
 ```
