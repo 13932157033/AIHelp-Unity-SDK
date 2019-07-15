@@ -115,7 +115,8 @@ public void init(string appKey,string domain,string appId){
 #### iOS:
 
 **Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents. If Party A uses any technical method to influence Party B's billing, Party B will have the right to notify Party A while unilaterally terminating the service immediately and ask Party A to assume responsibility for infulencing the billing of Party B.<br />
-Instantiate ElvaChatServiceSDKIOS, then call init with appKey, domain, appId:
+When activiting your app, You must use Instantiate ElvaChatServiceSDKIOS, then call init with appKey, domain, appId , 
+otherwise you can't use AIHelp service properly. 
 init(string appKey,string domain,string appId);**
 
 ```
