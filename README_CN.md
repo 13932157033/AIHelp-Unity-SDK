@@ -79,8 +79,8 @@ aihelp-plugin-unity.unitypackage
 ### 4. SDK初始化（必须在应用启动阶段调用）
 
 #### Android: 
-**甲方有义务按照乙方接入文档说明的正常接入方式和调用方式使用乙方服务，
-如甲方通过技术手段影响乙方计费，乙方有权在通知甲方的同时立即单方面终止服务，并要求甲方承担责任。<br />
+
+**甲方有义务按照乙方接入文档说明的正常接入方式和调用方式使用乙方服务，如甲方通过技术手段影响乙方计费，乙方有权在通知甲方的同时立即单方面终止服务，并要求甲方承担责任。<br />
 在您的应用启动的时候 实例化ElvaChatServiceSDKAndroid, 然后调用init接口传入appKey, domain, appId:
 init(string appKey,string domain,string appId);**
 
@@ -102,6 +102,7 @@ public void init(string appKey,string domain,string appId){
 ```
 
 #### iOS:
+
 **甲方有义务按照乙方接入文档说明的正常接入方式和调用方式使用乙方服务，如甲方通过技术手段影响乙方计费，乙方有权在通知甲方的同时立即单方面终止服务，并要求甲方承担责任。<br />
 在您的应用启动的时候 实例化ElvaChatServiceSDKIOS 然后调用init接口传入appKey, domain, appId:
 init(string appKey,string domain,string appId);**
@@ -148,13 +149,11 @@ __增加需要的权限:__
 注：请使用注册邮箱登录 [AIHelp 后台](http://console.aihelp.net/elva)。在“设置”菜单的“应用”页面查看。初次使用，需登录[AIHelp 官网](http://www.aihelp.net/index.html)自助注册。
 
 
-**初始化代码示例：** <br />
+**初始化代码示例：（必须在应用启动阶段调用）** <br />
 **甲方有义务按照乙方接入文档说明的正常接入方式和调用方式使用乙方服务，
 如甲方通过技术手段影响乙方计费，乙方有权在通知甲方的同时立即单方面终止服务，并要求甲方承担责任。**
 
 ```
-// 一定要在应用启动时进行初始化操作，不然会无法进入AIHelp智能客服系统。
-
 private static AIhelpService _instance;
 
 public static AIhelpService Instance

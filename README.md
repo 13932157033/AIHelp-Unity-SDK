@@ -11,7 +11,6 @@ Click "Clone or download" to download the SDK file in the github page, unzip the
 
 
 ### 2. Add AIHelp to your Unity project:
-
 In your Unity project，select menu Assets->Import Package->Custom Package，find **aihelp-plugin-unity.unitypackage** in the finder window.
 
 Or find aihelp-plugin-unity.unitypackage and double-click to open it, 
@@ -86,10 +85,7 @@ If your project doesn't have AndroidManifest.xml, please create one in reference
 
 #### Android: 
 
-**Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents. 
-If Party A uses any technical method to influence Party B's billing, 
-Party B will have the right to notify Party A while unilaterally terminating the service immediately 
-And ask Party A to assume responsibility for infulencing the billing of Party B.<br />
+**Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents.If Party A uses any technical method to influence Party B's billing,Party B will have the right to notify Party A while unilaterally terminating the service immediately And ask Party A to assume responsibility for infulencing the billing of Party B.<br />
 When activiting your app, You must use Instantiate ElvaChatServiceSDKAndroid, then call init with appKey, domain, appId , 
 otherwise you can't use AIHelp service properly. 
 init(string appKey,string domain,string appId);**
@@ -132,7 +128,6 @@ public ElvaChatServiceSDKIOS()
 public void init(string appKey,string domain,string appId){
 	elvaInit(appKey,domain,appId);
 }
-
 ```
 
 __Add Required Permissions:__
@@ -163,13 +158,10 @@ Note: Please log into [AIHelp Web Console](https://console.aihelp.net/elva) with
 If your company does not have an account, you can register an account at [AIHelp Website](http://aihelp.net/index.html)
 
 
-**Coding Example：**<br />
+**Coding Example：(Must be called during application initialization, otherwise you can't use AIHelp properly)**<br />
 **Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents. If Party A uses any technical method to influence Party B's billing, Party B will have the right to notify Party A while unilaterally terminating the service immediately and ask Party A to assume responsibility for infulencing the billing of Party B.**
 
 ```
-// Must be called during application/game initialization, otherwise you can't use AIHelp properly
-
-
 private static AIhelpService _instance;
 
 public static AIhelpService Instance
