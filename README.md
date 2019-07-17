@@ -28,6 +28,13 @@ import the AIHelp unity sdk into your project
 
  
 ### 3. Configure your Android Manifest（Only for Android)
+###(AIHelp SDK should not be obfuscated, otherwise it may result in service  unavailable)
+-keep class com.lioy.** {*;}
+-keep class bitoflife.** {*;}
+-keep class org.fusesource.** {*;}
+-keep class com.nostra13.** {*;}
+-keep class com.facebook.** {*;}
+
   In the AndroidManifest.xml of your project, add the below information：     
 **a. Add Required Permissions**
 

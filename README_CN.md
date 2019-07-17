@@ -23,6 +23,13 @@ aihelp-plugin-unity.unitypackage
 ![Import AIHelp Package](https://github.com/AI-HELP/Docs-Screenshots/blob/master/import-aihelp-unity-package.png "Import AIHelp Package")
 
 ### 3. 接入工程配置（仅用于Android）
+###(AIHelp SDK不可以被混淆，若混淆会导致服务不可用)
+-keep class com.lioy.** {*;}
+-keep class bitoflife.** {*;}
+-keep class org.fusesource.** {*;}
+-keep class com.nostra13.** {*;}
+-keep class com.facebook.** {*;}
+
   在你的Android工程的AndroidManifest.xml，增加需要的配置：     
 **a. 增加需要的权限**
 
