@@ -693,7 +693,6 @@ FAQ界面示例图:<br>
 ```
 
 **最佳实践：**
-
 > 1. 引导玩家从不同入口看到不同的服务
 [1]:https://AIHelp.net/elva "AIHelp 客服后台"
 [2]:https://AIHelp.net/register "AIHelp 官网注册"
