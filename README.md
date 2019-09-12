@@ -455,8 +455,7 @@ OR
 **Best Practice：**
 > 1. Use this method to show FAQs about your APP/Game properly. Configure FAQs in AIHelp Web Console. Each FAQ can be categroized into a section. If the FAQs are great in number, you can also add Parent Sections to categorize sections to make things clear and organized. 
 
-### <h4 id="showSingleFAQ">5. Show A Specific FAQ，use `showSingleFAQ`
-</h4>
+### <h4 id="showSingleFAQ">5. Show A Specific FAQ，use `showSingleFAQ`</h4>
 ```
 	void showSingleFAQ (string faqId);
 	void showSingleFAQ (string faqId, Dictionary<string,object> config);
@@ -514,7 +513,8 @@ OR
 
 - __faqId__: The PublishID of the FAQ item, you can check it at in [AIHelp Web Console](https://aihelp.net/elva): Find the FAQ in the FAQ menu and copy its PublishID.
 - __config__: Optional parameters for customized information. You can pass specific Tag information using sting list "elva-tags", see the above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.<br>
-![showSingleFAQ](https://github.com/CS30-NET/Pictures/blob/master/showSingleFAQ-EN-Android.png "showSingleFAQ")
+
+<img src="https://github.com/AI-HELP/Docs-Screenshots/blob/master/showSingleFAQ-EN-Android.png?raw=true" alt="showSingleFAQ">
 
 <h4 id="selfservice"></h4>
 
@@ -634,11 +634,11 @@ or
 **Best Practice：**
 
 > 1. Normally you do not need to use this method unless you intend to allow users to enter VIP conversation without engaging with the AI chat. You may use this method as a privilege for some users.<br>
-![showConversation](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-EN-Android.png "showConversation")
+
+<img src="https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-EN-Android.png?raw=true" alt="showConversation">
 
 
-### <h4 id="setSDKLanguage">11. Set SDK Lanague，use `setSDKLanguage`
-</h4>
+### <h4 id="setSDKLanguage">11. Set SDK Lanague，use `setSDKLanguage`</h4>
 Setting the SDK Language will change the FAQs, Operational information, AI Chat and SDK display language. 
 ```
 	void setSDKLanguage (string language);
@@ -650,7 +650,8 @@ Setting the SDK Language will change the FAQs, Operational information, AI Chat 
 **About Parameters：**
 
 - __language:__ Standard Language Alias. For example: en is for English, zh_CN is for Simplified Chinese。More language labels can be selected through AIHelp Web Console:"Settings"-->"Language"->Alias.<br>
-![language](https://github.com/AI-HELP/Docs-Screenshots/blob/master/language.png "language")
+
+<img src="https://github.com/AI-HELP/Docs-Screenshots/blob/master/Language-alias.png?raw=true" alt="Language Alias">
 
 
 **Best Practice：**
