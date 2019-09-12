@@ -319,9 +319,7 @@ public void OnAIHelpInitialized(string str)
 - __serverId__: The Server ID
 - __showConversationFlag__: Should be "0" or "1". If set at "1", the VIP conversation entry will be displayed in the upper right hand side of the AI conversation interface.
 - __config__: Optional parameters for customized information. You can pass specific Tag information using the sting list "elva-tags", see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.<br>
-![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-CN-Android.png "showElva")
-
-![Robot Customer Service Interface][showElva-EN-Android]
+![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-EN-Android.png "showElva")
 	
 **Best Practice：**
 
@@ -386,8 +384,8 @@ OR
 - __showConversationFlag__: Should be "0" or "1". If set at "1", the VIP conversation entry will be shown in the top right hand side corner of the AI conversation interface.
 - __config__: Optional parameters for customized information. You can pass specific Tag information using sting list "elva-tags", see above coding examples. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 - __defaultTabIndex__: Optional. The index of the first tab will be shown when entering the operation interface. Default value is the left-most tab，if you would like to show the AI conversation interface(the right-most side) set to 999.<br>
+![showElvaOP](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP-EN-Android.png "showElvaOP")
 	
-![Operation Module Interface][showElvaOP-EN-Android]
 
 **Best Practice：**
 
@@ -452,8 +450,7 @@ OR
 **About Parameters：**
 
 - __config__: Optional parameters for customized information. You can pass specific Tag information using sting list "elva-tags", see the above coding examples. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.<br>
-	
-![FAQ Interface][showFAQs-EN-Android]
+![showFAQs](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQs-EN-Android.png "showFAQs")	
 
 **Best Practice：**
 > 1. Use this method to show FAQs about your APP/Game properly. Configure FAQs in AIHelp Web Console. Each FAQ can be categroized into a section. If the FAQs are great in number, you can also add Parent Sections to categorize sections to make things clear and organized. 
@@ -517,8 +514,7 @@ OR
 
 - __faqId__: The PublishID of the FAQ item, you can check it at in [AIHelp Web Console](https://aihelp.net/elva): Find the FAQ in the FAQ menu and copy its PublishID.
 - __config__: Optional parameters for customized information. You can pass specific Tag information using sting list "elva-tags", see the above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.<br>
-	
-![Single FAQ Interface][showSingleFAQ-EN-Android]
+![showSingleFAQ](https://github.com/CS30-NET/Pictures/blob/master/showSingleFAQ-EN-Android.png "showSingleFAQ")
 
 <h4 id="selfservice"></h4>
 
@@ -638,7 +634,7 @@ or
 **Best Practice：**
 
 > 1. Normally you do not need to use this method unless you intend to allow users to enter VIP conversation without engaging with the AI chat. You may use this method as a privilege for some users.<br>
-![Manual Customer Service Interface][showConversation-EN-Android]
+![showConversation](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-EN-Android.png "showConversation")
 
 
 #### <h4 id="setSDKLanguage">11. Set SDK Lanague，use `setSDKLanguage`
@@ -654,8 +650,8 @@ Setting the SDK Language will change the FAQs, Operational information, AI Chat 
 **About Parameters：**
 
 - __language:__ Standard Language Alias. For example: en is for English, zh_CN is for Simplified Chinese。More language labels can be selected through AIHelp Web Console:"Settings"-->"Language"->Alias.<br>
+![language](https://github.com/AI-HELP/Docs-Screenshots/blob/master/language.png "language")
 
-![Partial Language Short Name][language]
 
 **Best Practice：**
 
