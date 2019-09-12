@@ -693,7 +693,9 @@ FAQ界面示例图:<br>
 ```
 
 **最佳实践：**
+
 > 1. 引导玩家从不同入口看到不同的服务
+
 [1]:https://AIHelp.net/elva "AIHelp 客服后台"
 [2]:https://AIHelp.net/register "AIHelp 官网注册"
 [showElva-CN-Android]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-CN-Android.png "机器人客服界面"
@@ -703,3 +705,5 @@ FAQ界面示例图:<br>
 [showFAQSection-CN-Android]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQSection-CN-Android.png "分类下所有FAQ界面"
 [showSingleFAQ-CN-Android]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/showSingleFAQ-CN-Android.png "单条FAQ界面"
 [language]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/Language-alias.png "部分语言简称"
+
+

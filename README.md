@@ -695,7 +695,9 @@ Or
 ```
 
 **Best Practice：**
+
 > 1. Introduce different story lines to users from different sources.
+
 [1]: https://AIHelp.net/elva "AIHelp Customer Service Backstage"
 [2]: https://AIHelp.net/register "AIHelp official website registration"
 [showElva-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-EN-Android.png "Robot Customer Service Interface"
@@ -705,3 +707,5 @@ Or
 [showFAQSection-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQSection-EN-Android.png "All FAQ Interfaces under Category"
 [showSingleFAQ-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showSingleFAQ-EN-Android.png "Single FAQ Interface"
 [language]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/Language-alias.png "Partial Language Short Name"
+
+
