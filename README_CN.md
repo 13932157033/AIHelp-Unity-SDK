@@ -636,7 +636,7 @@ FAQ界面示例图:<br>
 人工客服界面示例图:<br>
 
 
-<img src="https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-CN-Android?raw=true"  alt="showConversation">
+<img src="https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-CN-Android.png?raw=true"  alt="showConversation">
 
 ### <h4 id="setSDKLanguage">11. 设置语言，调用`setSDKLanguage`方法
 </h4>
