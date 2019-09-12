@@ -204,11 +204,11 @@ public AIhelpService()
 **注册初始化完成回调（可选）：**
 
 ### <h4 id="registerInitializationCallback"> 初始化完成回调 `registerInitializationCallback`</h4>
-
+```
 	void registerInitializationCallback(string gameObject);
-		
+```		
 **代码示例：**
-
+```
 	public void RegisterInitializationCallback(string gameObject)
 	{
 		if(sdk != null)
@@ -216,7 +216,7 @@ public AIhelpService()
 			sdk.registerInitializationCallback(gameObject);
 		}
 	}
-	
+```	
 
 **参数说明：**
 
@@ -274,24 +274,24 @@ public void OnAIHelpInitialized(string str)
 **注：您并不需要调用以上所有接口，尤其当您的游戏/应用只设置一个客服入口时, 有的接口所展示的界面包含了其他接口，详情见下：**
 
 #### <h4 id="showElva">2. 智能客服主界面启动，调用`showElva`接口，启动机器人客服聊天界面</h4>
-
+```
 	void showElva(
 				string playerName,
 				string playerUid,
 				string serverId,
 				string showConversationFlag);
-			
+```		
 
-
+```
 	void showElva(
 				string playerName,
 				string playerUid,
 				string serverId,
 				string showConversationFlag,
 				Dictionary<string,object> config);
-
+```
 **代码示例：**
-
+```
 	public void AIHelpChat()
 	{
 		Dictionary<string, object> tags = new Dictionary<string, object> ();
@@ -309,7 +309,7 @@ public void OnAIHelpInitialized(string str)
 				"1",
 				config);
 	}
-
+```
 	
 **参数说明：**
 
@@ -318,9 +318,8 @@ public void OnAIHelpInitialized(string str)
 - serverId:用户所在的服务器编号。 
 - showConversationFlag(0或1):是否开启人工入口。此处为1时，将在机器人的聊天界面右上角，提供人工聊天的入口。如下图。
 - config:可选，自定义用户信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为个字符串列表，此处传入自定义一个或多个tag值。这些tag需要在Web管理配置同名称的标签才能生效。
-	
-
-![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-CN-Android.png "showElva")
+机器人客服界面示例图:<br>
+![机器人客服界面][showElva-CN-Android]
 
 	
 **最佳实践：**
@@ -330,22 +329,24 @@ public void OnAIHelpInitialized(string str)
 > 2. 打开人工客服入口，用户可以在机器人客服界面右上角进入人工客服进行聊天, 你也可以设置条件只让一部分用户看到这个入口
 
 #### <h4 id="showElvaOP">3. 智能客服运营模块主界面启动，调用`showElvaOP`方法，启动运营模块界面</h4>
-
+```
 	void showElvaOP(
 				string playerName,
 				string playerUid,
 				string serverId,
 				string showConversationFlag);
+```				
 或
-
+```
 	void showElvaOP(
 				string playerName,
 				string playerUid,
 				string serverId,
 				string showConversationFlag,
 				Dictionary<string,object> config);
+```				
 或
-
+```
 	void showElvaOP(
 				string playerName,
 				string playerUid,
@@ -353,9 +354,9 @@ public void OnAIHelpInitialized(string str)
 				string showConversationFlag,
 				Dictionary<string,object> config,
 				int defaultTabIndex);
-
+```
 **代码示例：**
-
+```
 	// Presenting Operation Info to your customers
 	public void OperationModule()
 	{
@@ -373,7 +374,7 @@ public void OnAIHelpInitialized(string str)
 		     "1", 
 		     config);
 	}
-
+```
 **参数说明：**
 
 - playerName:游戏中用户名称。 
@@ -382,8 +383,8 @@ public void OnAIHelpInitialized(string str)
 - showConversationFlag(0或1):是否开启人工入口。此处为1时，将在机器人的聊天界面右上角，提供人工聊天的入口。如下图。
 - config:可选，自定义用户信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为个字符串列表，此处传入自定义一个或多个tag值。这些tag需要在Web管理配置同名称的标签才能生效。
 - defaultTabIndex: 可选，首次进入运营界面时候展示的tab的编号，默认为第一个tab，若需默认展示客服界面tab，设置值为999
-	
-![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP_Android.png "showElvaOP")
+运营模块界面示例图:<br>
+![运营模块界面][showElvaOP-CN-Android]
 
 **最佳实践：**
 > 1. 在您应用的运营入口触发这个接口的调用。
@@ -391,15 +392,15 @@ public void OnAIHelpInitialized(string str)
 > 2. 在tab页面，用户可以在页面右上角进入FAQ页面查看；在机器人客服页面（Help页面），用户可以在页面右上角进入人工客服，此人工客服入口可以通过参数设置条件，根据条件打开或关闭，只让一部分用户看到这个入口。
 
 #### <h4 id="showFAQs">4. 展示FAQ列表, 调用`showFAQs `方法</h4>
-
+```
 	void showFAQs();
-
+```
 或
-
+```
 	void showFAQs(Dictionary<string,object> config);
-
+```
 **代码示例：**
-
+```
     public void ShowFAQs()
     {
         if(sdk != null)
@@ -442,12 +443,12 @@ public void OnAIHelpInitialized(string str)
 			sdk.showFAQs(config);
         }
     }
-
+```
 **参数说明：**
 
 - config:可选，自定义用户信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为个字符串列表，此处传入自定义一个或多个tag值。这些tag需要在Web管理配置同名称的标签才能生效。
-	
-![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQs-CN-Android.png "showFAQs")
+FAQ界面示例图:<br>
+![FAQ界面][showFAQs-CN-Android]
 
 **最佳实践：**
 
@@ -455,12 +456,12 @@ public void OnAIHelpInitialized(string str)
 
 #### <h4 id="showSingleFAQ">5. 展示单条FAQ，调用`showSingleFAQ`方法
 </h4>
-
+```
 	void showSingleFAQ (string faqId);
 	void showSingleFAQ (string faqId, Dictionary<string,object> config);
-
+```
 **代码示例：**
-
+```
 	// Presenting single FAQ to your customers
     public void ShowSingleFAQ(faqId)
     {
@@ -504,13 +505,13 @@ public void OnAIHelpInitialized(string str)
 			sdk.showSingleFAQ(faqId, config);
         }
     }
-    
+```    
 **参数说明：**
 
 - faqId:FAQ的PublishID,可以在[AIHelp 后台](https://aihelp.net/elva)中，从FAQs菜单下找到指定FAQ，查看PublishID。
 - config:可选，自定义用户信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为个字符串列表，此处传入自定义一个或多个tag值。这些tag需要在Web管理配置同名称的标签才能生效。
-	
-![showSingleFAQ](https://github.com/CS30-NET/Pictures/blob/master/showSingleFAQ-CN-Android.png "showSingleFAQ")
+单条FAQ界面示例图:<br>
+![单条FAQ界面][showSingleFAQ-CN-Android]
 
 <h4 id="selfservice"></h4>
 
@@ -524,13 +525,13 @@ public void OnAIHelpInitialized(string str)
 
 
 #### <h4 id="setName">6. 设置游戏名称信息，调用`setName`方法(建议游戏刚进入，调用init之后就默认调用)</h4>
-
+```
 	void setName(string game_name);
-
+```
 **代码示例：**
-
+```
 	sdk.setName("Your Game");
-
+```
 **参数说明：**
 
 - game_name:游戏名称
@@ -540,13 +541,13 @@ public void OnAIHelpInitialized(string str)
 > 1. 在初始化后调用该接口设置游戏名称，将显示在AIHelp相关界面标题栏。
 
 #### <h4 id="UserId">7. 设置用户唯一ID信息，调用`setUserId`方法</h4>
-
-	void setUserId(string userId); 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
-
+```
+	void setUserId(string userId); //如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
+```
 **代码示例：**
-
-	sdk.setUserId("123ABC567DEF"); 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
-
+```
+	sdk.setUserId("123ABC567DEF"); //如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
+```
 **参数说明：**
 
 - playerUid:用户唯一ID
@@ -556,13 +557,13 @@ public void OnAIHelpInitialized(string str)
 > 1. 通常你可以用在其他接口传入用户Id，无需调用该接口，但是若要使用[自助服务](#selfservice)，则必须调用。
 
 #### <h4 id="UserName">8. 设置用户名称信息，调用`setUserName`方法</h4>
-
-	void setUserName(string userName); 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
-
+```
+	void setUserName(string userName); //如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+```
 **代码示例：**
-
-	sdk.setUserName ("PLAYER_NAME"); 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
-
+```
+	sdk.setUserName ("PLAYER_NAME"); //如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+```
 **参数说明：**
 
 - playerName:用户名称
@@ -574,13 +575,13 @@ public void OnAIHelpInitialized(string str)
 
 #### <h4 id="ServerId">9. 设置服务器唯一ID信息，调用`setServerId`方法
 </h4>
-
+```
 	void setServerId(int serverId);
-
+```
 **代码示例：**
-
+```
 	sdk.seterverId("SERVER_ID");
-
+```
 **参数说明：**
 
 - serverId:服务器ID
@@ -591,19 +592,20 @@ public void OnAIHelpInitialized(string str)
 
 
 #### <h4 id="showConversation">10. 直接进入人工客服聊天，调用`showConversation`方法(要求设置[UserName](#UserName))</h4>
-
+```
 	void showConversation(
 				string playerUid,
 				string serverId);
+```				
 或
-
+```
 	void showConversation(
 				string playerUid,
 				string serverId,
 				Dictionary<string,object> config);
-	
+```	
 **代码示例：**
-
+```
     public void ShowVIPChat()
     {
         if(sdk != null)
@@ -619,7 +621,7 @@ public void OnAIHelpInitialized(string str)
 			sdk.showConversation(faqId, config);
         }
     }
-
+```
 **参数说明：**
 
 - playerUid:用户在游戏里的唯一标识
@@ -629,24 +631,24 @@ public void OnAIHelpInitialized(string str)
 **最佳实践：**
 
 > 1. 通常你不需要调用这个接口，除非你想在应用里设置触发点，让用户有机会直接进入人工客服聊天界面。
-
-![showConversation](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-CN-Android.png "showConversation")
+人工客服界面示例图:<br>
+![人工客服界面][showConversation-CN-Android]
 
 
 #### <h4 id="setSDKLanguage">11. 设置语言，调用`setSDKLanguage`方法
 </h4>
-
+```
 	void setSDKLanguage (string language);
-	
+```	
 **代码示例：**
-
+```
 	sdk.setSDKLanguage("en");
-
+```
 **参数说明：**
 
 - language:语言名称。如英语为en,简体中文为zh_CN。更多语言简称参见AIHelp后台，"设置"-->"语言"的Alias列。
-
-![language](https://github.com/AI-HELP/Docs-Screenshots/blob/master/Language-alias.png "语言Alias列")
+部分语言简称图:<br>
+![部分语言简称][language]
 
 **最佳实践：**
 
@@ -659,7 +661,7 @@ public void OnAIHelpInitialized(string str)
 如果你设置了进入AI客服的不同入口，希望用户从不同的入口进入AI客服时显示不同的欢迎语，进入不同故事线，可以通过设置config参数来实现： 
 	
 **代码示例：**
-
+```
 	Dictionary<string, object> welcomeText = new Dictionary<string, object> ();
 	
 	//调用不同故事线功能，使用指定的提示语句，调出相应的机器人欢迎语
@@ -677,8 +679,9 @@ public void OnAIHelpInitialized(string str)
 			"", 
 			"1",
 			config);
+```			
 或
-
+```
 	//如果是在智能客服运营主界面中
 	sdk.showElvaOP(
 			"TEST_PLAYER_NAME", 
@@ -687,8 +690,18 @@ public void OnAIHelpInitialized(string str)
 			"", 
 			"1",
 			config);
-
+```
 
 **最佳实践：**
 
 > 1. 引导玩家从不同入口看到不同的服务
+
+[1]:https://AIHelp.net/elva "AIHelp 客服后台"
+[2]:https://AIHelp.net/register "AIHelp 官网注册"
+[showElva-CN-Android]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-CN-Android.png "机器人客服界面"
+[showConversation-CN-Android]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-CN-Android.png "人工客服界面"
+[showElvaOP-CN-Android]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP-CN-Android.png "运营模块界面"
+[showFAQs-CN-Android]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQs-CN-Android.png "FAQ界面"
+[showFAQSection-CN-Android]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQSection-CN-Android.png "分类下所有FAQ界面"
+[showSingleFAQ-CN-Android]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/showSingleFAQ-CN-Android.png "单条FAQ界面"
+[language]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/Language-alias.png "部分语言简称"

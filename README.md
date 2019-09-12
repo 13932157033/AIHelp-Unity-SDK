@@ -209,11 +209,11 @@ public AIhelpService()
 
 **Register Initialization Callback (optional）：**
 ### <h4 id="registerInitializationCallback"> Register Initialization Callback `registerInitializationCallback`</h4>
-
+```
 	void registerInitializationCallback(string gameObject);
-		
+```		
 **Code Example：**
-
+```
 	public void RegisterInitializationCallback(string gameObject)
 	{
 		if(sdk != null)
@@ -221,7 +221,7 @@ public AIhelpService()
 			sdk.registerInitializationCallback(gameObject);
 		}
 	}
-	
+```	
 
 **About Parameters：**
 
@@ -276,24 +276,24 @@ public void OnAIHelpInitialized(string str)
 **Note：It is not necessary for you to use all the APIs, especially when you only have one user interface for the customer service in your application. Some APIs already contains entry to other APIs, See below for details：**
 
 #### <h4 id="showElva">2. Launch the AI Conversation Interface，use `showElva`</h4>
-
+```
 	void showElva(
 				string playerName,
 				string playerUid,
 				string serverId,
 				string showConversationFlag);
-			
+```			
 
-
+```
 	void showElva(
 				string playerName,
 				string playerUid,
 				string serverId,
 				string showConversationFlag,
 				Dictionary<string,object> config);
-
+```
 **Coding Example：**
-
+```
 	public void AIHelpChat()
 	{
 		Dictionary<string, object> tags = new Dictionary<string, object> ();
@@ -311,16 +311,16 @@ public void OnAIHelpInitialized(string str)
 				"1",
 				config);
 	}
-
+```
 **About Parameters：**
 
 - __playerName__: In-App User Name
 - __playerUid__: In-App Unique User ID
 - __serverId__: The Server ID
 - __showConversationFlag__: Should be "0" or "1". If set at "1", the VIP conversation entry will be displayed in the upper right hand side of the AI conversation interface.
-- __config__: Optional parameters for customized information. You can pass specific Tag information using the sting list "elva-tags", see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
+- __config__: Optional parameters for customized information. You can pass specific Tag information using the sting list "elva-tags", see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.<br>
 	
-![showElva](https://github.com/AIHELP-NET/Pictures/blob/master/showElva-EN-Android.png "showElva")
+![Robot Customer Service Interface][showElva-EN-Android]
 	
 **Best Practice：**
 
@@ -330,22 +330,24 @@ public void OnAIHelpInitialized(string str)
 #### <h4 id="showElvaOP">3. Launch The Operation Interface, use `showElvaOP`</h4>
 
 The operation module is useful when you want to present updates, news, articles or any background information about your APP/Game to users. The AI Help
-
+```
 	void showElvaOP(
 				string playerName,
 				string playerUid,
 				string serverId,
 				string showConversationFlag);
+```				
 OR
-
+```
 	void showElvaOP(
 				string playerName,
 				string playerUid,
 				string serverId,
 				string showConversationFlag,
 				Dictionary<string,object> config);
+```				
 OR
-
+```
 	void showElvaOP(
 				string playerName,
 				string playerUid,
@@ -353,9 +355,9 @@ OR
 				string showConversationFlag,
 				Dictionary<string,object> config,
 				int defaultTabIndex);
-
+```
 **Coding Example：**
-
+```
 	// Presenting Operation Info to your customers
 	public void OperationModule()
 	{
@@ -374,7 +376,7 @@ OR
 		     "1", 
 		     config);
 	}
-
+```
 **About Parameters：**
 
 - __playerName__: User Name in Game/APP
@@ -382,24 +384,24 @@ OR
 - __serverId__: The Server ID
 - __showConversationFlag__: Should be "0" or "1". If set at "1", the VIP conversation entry will be shown in the top right hand side corner of the AI conversation interface.
 - __config__: Optional parameters for customized information. You can pass specific Tag information using sting list "elva-tags", see above coding examples. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
-- __defaultTabIndex__: Optional. The index of the first tab will be shown when entering the operation interface. Default value is the left-most tab，if you would like to show the AI conversation interface(the right-most side) set to 999.
+- __defaultTabIndex__: Optional. The index of the first tab will be shown when entering the operation interface. Default value is the left-most tab，if you would like to show the AI conversation interface(the right-most side) set to 999.<br>
 	
-![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP_Android.png "showElvaOP")
+![Operation Module Interface][showElvaOP-EN-Android]
 
 **Best Practice：**
 
 > 1. Use this API to present news, announcements, articles or any useful information to users/players. Configure and publish the information in AIHelp web console. 
 
 #### <h4 id="showFAQs">4. Display FAQs, use `showFAQs `</h4>
-
+```
 	void showFAQs();
-
+```
 OR
-
+```
 	void showFAQs(Dictionary<string,object> config);
-
+```
 **Coding Example：**
-
+```
     public void ShowFAQs()
     {
         if(sdk != null)
@@ -445,24 +447,24 @@ OR
 			sdk.showFAQs(config);
         }
     }
-
+```
 **About Parameters：**
 
-- __config__: Optional parameters for customized information. You can pass specific Tag information using sting list "elva-tags", see the above coding examples. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
+- __config__: Optional parameters for customized information. You can pass specific Tag information using sting list "elva-tags", see the above coding examples. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.<br>
 	
-![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQs-EN-Android.png "showFAQs")
+![FAQ Interface][showFAQs-EN-Android]
 
 **Best Practice：**
 > 1. Use this method to show FAQs about your APP/Game properly. Configure FAQs in AIHelp Web Console. Each FAQ can be categroized into a section. If the FAQs are great in number, you can also add Parent Sections to categorize sections to make things clear and organized. 
 
 #### <h4 id="showSingleFAQ">5. Show A Specific FAQ，use `showSingleFAQ`
 </h4>
-
+```
 	void showSingleFAQ (string faqId);
 	void showSingleFAQ (string faqId, Dictionary<string,object> config);
-
+```
 **Coding Example：**
-
+```
 	// Presenting single FAQ to your customers
     public void ShowSingleFAQ(faqId)
     {
@@ -509,13 +511,13 @@ OR
 			sdk.showSingleFAQ(faqId, config);
         }
     }
-
+```
 **About Parameters：**
 
 - __faqId__: The PublishID of the FAQ item, you can check it at in [AIHelp Web Console](https://aihelp.net/elva): Find the FAQ in the FAQ menu and copy its PublishID.
-- __config__: Optional parameters for customized information. You can pass specific Tag information using sting list "elva-tags", see the above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
+- __config__: Optional parameters for customized information. You can pass specific Tag information using sting list "elva-tags", see the above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.<br>
 	
-![showSingleFAQ](https://github.com/AIHELP-NET/Pictures/blob/master/showSingleFAQ-EN-Android.png "showSingleFAQ")
+![Single FAQ Interface][showSingleFAQ-EN-Android]
 
 <h4 id="selfservice"></h4>
 
@@ -529,13 +531,13 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 > 1. Use this method when you want to show a specific FAQ in a proper location of your APP/Game.
 
 #### <h4 id="setName">6. Set Your App's name for AIHelp SDK to display，use `setName`</h4>
-
+```
 	void setName(string game_name);
-
+```
 **Coding Example：**
-
+```
 	sdk.setName("Your Game");
-
+```
 **About Parameters：**
 
 - __game_name__: APP/Game Name
@@ -546,13 +548,13 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 
 #### <h4 id="UserId">7. Set the Unique User ID, use `setUserId`</h4>
 
-
-	void setUserId(string userId); If the userid is not available, the empty string "" is passed, and a unique device id is generated.
-
+```
+	void setUserId(string userId); //If the userid is not available, the empty string "" is passed, and a unique device id is generated.
+```
 **Coding Example：**
-
-	sdk.setUserId("123ABC567DEF"); If the userid is not available, the empty string "" is passed, and a unique device id is generated.
-
+```
+	sdk.setUserId("123ABC567DEF"); //If the userid is not available, the empty string "" is passed, and a unique device id is generated.
+```
 **About Parameters：**
 
 - __playerUid__:Unique User ID
@@ -562,13 +564,13 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 > 1. Normally you don not need to use this method if you have passed the user ID in another method. However, if you want to use the FAQ's [Self-Service](#selfservice), then you must set the User Id first.
 
 #### <h4 id="UserName">8. Set User Name，use `setUserName`</h4>
-
-	void setUserName(string userName); If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
-
+```
+	void setUserName(string userName); //If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
+```
 **Coding Example：**
-
-	sdk.setUserName ("PLAYER_NAME");If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
-
+```
+	sdk.setUserName ("PLAYER_NAME");//If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
+```
 **About Parameters：**
 
 - __playerName:__ User/Player Name
@@ -580,13 +582,13 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 
 #### <h4 id="ServerId">9. Set Unique Server ID，use `setServerId`
 </h4>
-
+```
 	void setServerId(int serverId);
-
+```
 **Coding Example：**
-
+```
 	sdk.seterverId("SERVER_ID");
-
+```
 **About Parameters：**
 
 - __serverId:__ The Unique Server ID
@@ -596,20 +598,20 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 > 1. Normally you do not need to use this method if you have passed the server ID in another method. However, if you want to use the FAQ's [Self-Service](#selfservice), then you must set the User Id first.
 
 #### <h4 id="showConversation">10. Launch VIP Chat Console, use `showConversation`(need to set [UserName](#UserName))</h4>
-
+```
 	void showConversation(
 				string playerUid,
 				string serverId);
-
+```
 or
-
+```
 	void showConversation(
 				string playerUid,
 				string serverId,
 				Dictionary<string,object> config);
-	
+```	
 **Coding Example：**
-
+```
     public void ShowVIPChat()
     {
         if(sdk != null)
@@ -625,7 +627,7 @@ or
 			sdk.showConversation(faqId, config);
         }
     }
-
+```
 **About Parameters：**
 
 - __playerUid__:Unique User ID
@@ -634,26 +636,25 @@ or
 
 **Best Practice：**
 
-> 1. Normally you do not need to use this method unless you intend to allow users to enter VIP conversation without engaging with the AI chat. You may use this method as a privilege for some users.
-
-![showConversation](https://github.com/AIHELP-NET/Pictures/blob/master/showConversation-EN-Android.png "showConversation")
+> 1. Normally you do not need to use this method unless you intend to allow users to enter VIP conversation without engaging with the AI chat. You may use this method as a privilege for some users.<br>
+![Manual Customer Service Interface][showConversation-EN-Android]
 
 
 #### <h4 id="setSDKLanguage">11. Set SDK Lanague，use `setSDKLanguage`
 </h4>
 Setting the SDK Language will change the FAQs, Operational information, AI Chat and SDK display language. 
-
+```
 	void setSDKLanguage (string language);
-	
+```	
 **Coding Example：**
-
+```
 	sdk.setSDKLanguage("en");
-
+```
 **About Parameters：**
 
-- __language:__ Standard Language Alias. For example: en is for English, zh_CN is for Simplified Chinese。More language labels can be selected through AIHelp Web Console:"Settings"-->"Language"->Alias.
+- __language:__ Standard Language Alias. For example: en is for English, zh_CN is for Simplified Chinese。More language labels can be selected through AIHelp Web Console:"Settings"-->"Language"->Alias.<br>
 
-![language](https://github.com/AI-HELP/Docs-Screenshots/blob/master/Language-alias.png "Language Alias")
+![Partial Language Short Name][language]
 
 **Best Practice：**
 
@@ -665,7 +666,7 @@ Setting the SDK Language will change the FAQs, Operational information, AI Chat 
 If your APP provides multiple entries to AIHelp, and you intend to introduce different AI welcome texts and story lines to users from different entries, you can set config parameters within [showElva](#showElva) or [showElvaOP](#showElvaOP)： 
 
 **Coding Example：**
-	
+```	
 	Dictionary<string, object> welcomeText = new Dictionary<string, object> ();
 	// note：anotherWelcomeText is key，should be unchanged.
 	// you need to change usersay according to the "User Say" in your new 
@@ -691,9 +692,18 @@ Or
 			"", 
 			"1",
 			config);
-
+```
 
 **Best Practice：**
 
 > 1. Introduce different story lines to users from different sources.
 
+[1]: https://AIHelp.net/elva "AIHelp Customer Service Backstage"
+[2]: https://AIHelp.net/register "AIHelp official website registration"
+[showElva-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-EN-Android.png "Robot Customer Service Interface"
+[showConversation-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-EN-Android.png "Manual Customer Service Interface"
+[showElvaOP-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP-EN-Android.png "Operation Module Interface"
+[showFAQs-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQs-EN-Android.png "FAQ Interface"
+[showFAQSection-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQSection-EN-Android.png "All FAQ Interfaces under Category"
+[showSingleFAQ-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showSingleFAQ-EN-Android.png "Single FAQ Interface"
+[language]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/Language-alias.png "Partial Language Short Name"
