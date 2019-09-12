@@ -514,7 +514,7 @@ FAQ界面示例图:<br>
 单条FAQ界面示例图:<br>
 
 
-![showSingleFAQ](https://github.com/CS30-NET/Pictures/blob/master/showSingleFAQ-CN-Android.png "showSingleFAQ")
+<img src="https://github.com/AI-HELP/Docs-Screenshots/blob/master/showSingleFAQ-CN-IOS.png?raw=true" width="414" alt="showSingleFAQ">
 
 <h4 id="selfservice"></h4>
 
@@ -636,7 +636,7 @@ FAQ界面示例图:<br>
 人工客服界面示例图:<br>
 
 
-![showConversation](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-CN-Android.png "showConversation")
+<img src="https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-CN-IOS.png?raw=true" width="414" alt="showConversation">
 
 ### <h4 id="setSDKLanguage">11. 设置语言，调用`setSDKLanguage`方法
 </h4>
@@ -653,7 +653,7 @@ FAQ界面示例图:<br>
 部分语言简称图:<br>
 
 
-![language](https://github.com/AI-HELP/Docs-Screenshots/blob/master/language.png "language")
+<img src="https://github.com/AI-HELP/Docs-Screenshots/blob/master/Language-alias.png?raw=true" width="414" alt="语言Alias列">
 
 **最佳实践：**
 
