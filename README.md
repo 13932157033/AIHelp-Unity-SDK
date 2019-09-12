@@ -697,7 +697,6 @@ Or
 **Best Practice：**
 
 > 1. Introduce different story lines to users from different sources.
-
 [1]: https://AIHelp.net/elva "AIHelp Customer Service Backstage"
 [2]: https://AIHelp.net/register "AIHelp official website registration"
 [showElva-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-EN-Android.png "Robot Customer Service Interface"
