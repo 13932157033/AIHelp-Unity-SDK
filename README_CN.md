@@ -456,8 +456,7 @@ FAQ界面示例图:<br>
 
 > 1. 在您应用的FAQ主入口触发这个接口的调用。在AIHelp 后台页面配置并分类FAQ，如果您的FAQ较多，可以增加一个父级分类。
 
-### <h4 id="showSingleFAQ">5. 展示单条FAQ，调用`showSingleFAQ`方法
-</h4>
+### <h4 id="showSingleFAQ">5. 展示单条FAQ，调用`showSingleFAQ`方法</h4>
 ```
 	void showSingleFAQ (string faqId);
 	void showSingleFAQ (string faqId, Dictionary<string,object> config);
@@ -577,8 +576,7 @@ FAQ界面示例图:<br>
 > 1. 传入你的App的用户名称，这样在后台客户服务页面会展示用户的应用内名称，便于客服在服务用户时个性化称呼对方。
 > 2. 通常你无需调用该接口，可以用其他接口传入用户名称，但是若要使用[自助服务](#selfservice)，则必须调用。
 
-### <h4 id="ServerId">9. 设置服务器唯一ID信息，调用`setServerId`方法
-</h4>
+### <h4 id="ServerId">9. 设置服务器唯一ID信息，调用`setServerId`方法</h4>
 ```
 	void setServerId(int serverId);
 ```
