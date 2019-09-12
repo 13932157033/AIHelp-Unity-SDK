@@ -319,7 +319,8 @@ public void OnAIHelpInitialized(string str)
 - __serverId__: The Server ID
 - __showConversationFlag__: Should be "0" or "1". If set at "1", the VIP conversation entry will be displayed in the upper right hand side of the AI conversation interface.
 - __config__: Optional parameters for customized information. You can pass specific Tag information using the sting list "elva-tags", see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.<br>
-	
+![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-CN-Android.png "showElva")
+
 ![Robot Customer Service Interface][showElva-EN-Android]
 	
 **Best Practice：**
@@ -694,18 +695,9 @@ Or
 			config);
 ```
 
-Best Practice:
+**Best Practice：**
 
 > 1. Introduce different story lines to users from different sources.
 
-[1]: https://AIHelp.net/elva "AIHelp Customer Service Backstage"
-[2]: https://AIHelp.net/register "AIHelp official website registration"
-[showElva-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-EN-Android.png "Robot Customer Service Interface"
-[showConversation-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-EN-Android.png "Manual Customer Service Interface"
-[showElvaOP-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP-EN-Android.png "Operation Module Interface"
-[showFAQs-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQs-EN-Android.png "FAQ Interface"
-[showFAQSection-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQSection-EN-Android.png "All FAQ Interfaces under Category"
-[showSingleFAQ-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showSingleFAQ-EN-Android.png "Single FAQ Interface"
-[language]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/Language-alias.png "Partial Language Short Name"
 
 
