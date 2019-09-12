@@ -449,6 +449,7 @@ public void OnAIHelpInitialized(string str)
 - config:可选，自定义用户信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为个字符串列表，此处传入自定义一个或多个tag值。这些tag需要在Web管理配置同名称的标签才能生效。
 FAQ界面示例图:<br>
 
+
 ![showFAQs](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQs-CN-Android.png "showFAQs")
 
 **最佳实践：**
@@ -512,6 +513,7 @@ FAQ界面示例图:<br>
 - faqId:FAQ的PublishID,可以在[AIHelp 后台](https://aihelp.net/elva)中，从FAQs菜单下找到指定FAQ，查看PublishID。
 - config:可选，自定义用户信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为个字符串列表，此处传入自定义一个或多个tag值。这些tag需要在Web管理配置同名称的标签才能生效。
 单条FAQ界面示例图:<br>
+
 
 ![showSingleFAQ](https://github.com/CS30-NET/Pictures/blob/master/showSingleFAQ-CN-Android.png "showSingleFAQ")
 
@@ -635,6 +637,7 @@ FAQ界面示例图:<br>
 > 1. 通常你不需要调用这个接口，除非你想在应用里设置触发点，让用户有机会直接进入人工客服聊天界面。
 人工客服界面示例图:<br>
 
+
 ![showConversation](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-CN-Android.png "showConversation")
 
 #### <h4 id="setSDKLanguage">11. 设置语言，调用`setSDKLanguage`方法
@@ -650,6 +653,7 @@ FAQ界面示例图:<br>
 
 - language:语言名称。如英语为en,简体中文为zh_CN。更多语言简称参见AIHelp后台，"设置"-->"语言"的Alias列。
 部分语言简称图:<br>
+
 
 ![language](https://github.com/AI-HELP/Docs-Screenshots/blob/master/language.png "language")
 
