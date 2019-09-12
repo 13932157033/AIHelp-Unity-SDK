@@ -88,7 +88,7 @@ aihelp-plugin-unity.unitypackage
 如果你的Unity工程还没有AndroidManifest.xml, 可以参照SDK下载文件包含的中的AndroidManifest.xml创建一个。
 ### 4. SDK初始化（必须在应用启动阶段调用）
 
-#### Android: 
+### Android: 
 
 **甲方有义务按照乙方接入文档说明的正常接入方式和调用方式使用乙方服务，如甲方通过技术手段影响乙方计费，乙方有权在通知甲方的同时立即单方面终止服务，并要求甲方承担责任。<br />
 在您的应用启动的时候 实例化ElvaChatServiceSDKAndroid, 然后调用init接口传入appKey, domain, appId:
@@ -111,7 +111,7 @@ public void init(string appKey,string domain,string appId){
 }
 ```
 
-#### iOS:
+### iOS:
 
 **甲方有义务按照乙方接入文档说明的正常接入方式和调用方式使用乙方服务，如甲方通过技术手段影响乙方计费，乙方有权在通知甲方的同时立即单方面终止服务，并要求甲方承担责任。<br />
 在您的应用启动的时候 实例化ElvaChatServiceSDKIOS 然后调用init接口传入appKey, domain, appId:
@@ -252,7 +252,7 @@ public void OnAIHelpInitialized(string str)
 ### 5. 使用AIHelp 接口
 
 
-#### 1. 接口说明
+### 1. 接口说明
 
 | 接口名 | 作用 |备注|
 |:------------- |:---------------|:---------------|
@@ -273,7 +273,7 @@ public void OnAIHelpInitialized(string str)
 
 **注：您并不需要调用以上所有接口，尤其当您的游戏/应用只设置一个客服入口时, 有的接口所展示的界面包含了其他接口，详情见下：**
 
-#### <h4 id="showElva">2. 智能客服主界面启动，调用`showElva`接口，启动机器人客服聊天界面</h4>
+### <h4 id="showElva">2. 智能客服主界面启动，调用`showElva`接口，启动机器人客服聊天界面</h4>
 ```
 	void showElva(
 				string playerName,
@@ -328,7 +328,7 @@ public void OnAIHelpInitialized(string str)
 在AIHelp 配置个性化的机器人欢迎语，以及更多机器人对话故事线，引导用户反馈并得到回答。
 > 2. 打开人工客服入口，用户可以在机器人客服界面右上角进入人工客服进行聊天, 你也可以设置条件只让一部分用户看到这个入口
 
-#### <h4 id="showElvaOP">3. 智能客服运营模块主界面启动，调用`showElvaOP`方法，启动运营模块界面</h4>
+### <h4 id="showElvaOP">3. 智能客服运营模块主界面启动，调用`showElvaOP`方法，启动运营模块界面</h4>
 ```
 	void showElvaOP(
 				string playerName,
@@ -391,7 +391,7 @@ public void OnAIHelpInitialized(string str)
 在AIHelp 后台配置运营分页（tab)并且发布跟应用相关的运营公告内容。就通过AIHelp展示这些内容给用户。运营界面的最后一个分页总是机器人客服聊天界面。
 > 2. 在tab页面，用户可以在页面右上角进入FAQ页面查看；在机器人客服页面（Help页面），用户可以在页面右上角进入人工客服，此人工客服入口可以通过参数设置条件，根据条件打开或关闭，只让一部分用户看到这个入口。
 
-#### <h4 id="showFAQs">4. 展示FAQ列表, 调用`showFAQs `方法</h4>
+### <h4 id="showFAQs">4. 展示FAQ列表, 调用`showFAQs `方法</h4>
 ```
 	void showFAQs();
 ```
@@ -456,7 +456,7 @@ FAQ界面示例图:<br>
 
 > 1. 在您应用的FAQ主入口触发这个接口的调用。在AIHelp 后台页面配置并分类FAQ，如果您的FAQ较多，可以增加一个父级分类。
 
-#### <h4 id="showSingleFAQ">5. 展示单条FAQ，调用`showSingleFAQ`方法
+### <h4 id="showSingleFAQ">5. 展示单条FAQ，调用`showSingleFAQ`方法
 </h4>
 ```
 	void showSingleFAQ (string faqId);
@@ -528,7 +528,7 @@ FAQ界面示例图:<br>
 > 1. 在您应用的特定功能入口触发这个接口的调用，可以方便用户了解具体功能相关的FAQ。
 
 
-#### <h4 id="setName">6. 设置游戏名称信息，调用`setName`方法(建议游戏刚进入，调用init之后就默认调用)</h4>
+### <h4 id="setName">6. 设置游戏名称信息，调用`setName`方法(建议游戏刚进入，调用init之后就默认调用)</h4>
 ```
 	void setName(string game_name);
 ```
@@ -544,7 +544,7 @@ FAQ界面示例图:<br>
 
 > 1. 在初始化后调用该接口设置游戏名称，将显示在AIHelp相关界面标题栏。
 
-#### <h4 id="UserId">7. 设置用户唯一ID信息，调用`setUserId`方法</h4>
+### <h4 id="UserId">7. 设置用户唯一ID信息，调用`setUserId`方法</h4>
 ```
 	void setUserId(string userId); //如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
 ```
@@ -560,7 +560,7 @@ FAQ界面示例图:<br>
 
 > 1. 通常你可以用在其他接口传入用户Id，无需调用该接口，但是若要使用[自助服务](#selfservice)，则必须调用。
 
-#### <h4 id="UserName">8. 设置用户名称信息，调用`setUserName`方法</h4>
+### <h4 id="UserName">8. 设置用户名称信息，调用`setUserName`方法</h4>
 ```
 	void setUserName(string userName); //如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
 ```
@@ -577,7 +577,7 @@ FAQ界面示例图:<br>
 > 1. 传入你的App的用户名称，这样在后台客户服务页面会展示用户的应用内名称，便于客服在服务用户时个性化称呼对方。
 > 2. 通常你无需调用该接口，可以用其他接口传入用户名称，但是若要使用[自助服务](#selfservice)，则必须调用。
 
-#### <h4 id="ServerId">9. 设置服务器唯一ID信息，调用`setServerId`方法
+### <h4 id="ServerId">9. 设置服务器唯一ID信息，调用`setServerId`方法
 </h4>
 ```
 	void setServerId(int serverId);
@@ -595,7 +595,7 @@ FAQ界面示例图:<br>
 > 1. 通常你无需调用该接口，可以用其他接口传入服务器ID，但是若要使用[自助服务](#selfservice)，则必须调用。
 
 
-#### <h4 id="showConversation">10. 直接进入人工客服聊天，调用`showConversation`方法(要求设置[UserName](#UserName))</h4>
+### <h4 id="showConversation">10. 直接进入人工客服聊天，调用`showConversation`方法(要求设置[UserName](#UserName))</h4>
 ```
 	void showConversation(
 				string playerUid,
@@ -640,7 +640,7 @@ FAQ界面示例图:<br>
 
 ![showConversation](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-CN-Android.png "showConversation")
 
-#### <h4 id="setSDKLanguage">11. 设置语言，调用`setSDKLanguage`方法
+### <h4 id="setSDKLanguage">11. 设置语言，调用`setSDKLanguage`方法
 </h4>
 ```
 	void setSDKLanguage (string language);
@@ -663,7 +663,7 @@ FAQ界面示例图:<br>
 > 2. 如果你的应用允许用户更改语言，那么每次更改语言之后，也需要调用此接口重新设置SDK的语言。
 
 
-#### 12. 设置另一个欢迎语。
+### 12. 设置另一个欢迎语。
 
 如果你设置了进入AI客服的不同入口，希望用户从不同的入口进入AI客服时显示不同的欢迎语，进入不同故事线，可以通过设置config参数来实现： 
 	
