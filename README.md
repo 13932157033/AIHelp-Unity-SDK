@@ -694,7 +694,7 @@ Or
 			config);
 ```
 
-**Best Practice：**
+Best Practice:
 
 > 1. Introduce different story lines to users from different sources.
 
