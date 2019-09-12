@@ -4,9 +4,14 @@
 ### 1. Download The AIHelp Unity SDK：
 Click "Clone or download" to download the SDK file in the github page, unzip the compressed file and get **aihelp-plugin-unity.unitypackage**
 
+Note: (Only for Android)
+If you don't have "android-support-v4.jar" in your project, you need to copy the "android-support-v4.jar" to the project libs file.
+Ignore if there is "android-support-v4.jar" in your project
+
 | File name | Description |
 |:------------- |:---------------|
 | **aihelp-plugin-unity.unitypackage**    | AIHelp Unity SDK |
+| **android-support-v4.jar**    | If not, you need to download and copy it to the project libs file. 
 | **AndroidManifest.xml**    | Example AndroidManifest file|
 
 
@@ -16,75 +21,71 @@ In your Unity project，select menu Assets->Import Package->Custom Package，fin
 Or find aihelp-plugin-unity.unitypackage and double-click to open it, 
 import the AIHelp unity sdk into your project
 
-
 	Note：After you import the sdk, do not change the files location under 
 	Plugins/Android and Plugins/iOS, unless you have a valid reason.
 	
 	Changing file location may result in an integration failure.
 
-
-
 ![Import AIHelp Package](https://github.com/AI-HELP/Docs-Screenshots/blob/master/import-aihelp-unity-package.png "Import AIHelp Package")
 
  
 ### 3. Configure your Android Manifest（Only for Android)
-### (AIHelp SDK should not be obfuscated, otherwise it may result in service  unavailable)
+### (If your apk will go through the process of obfuscating eventually, please add following code in proguard file)
     -keep class com.lioy.** {*;}
     -keep class bitoflife.** {*;}
     -keep class org.fusesource.** {*;}
     -keep class com.nostra13.** {*;}
     -keep class com.facebook.** {*;}
 
-  In the AndroidManifest.xml of your project, add the below information：     
+  In the AndroidManifest.xml of your project, add the below information： 
+  
 **a. Add Required Permissions**
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<!-- 上传表单图片的时候需要此权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<!-- 上传表单图片的时候需要此权限 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	
+	<!--需要的刘海屏适配 -->
+	<!--google刘海适配-->
+    <meta-data
+        android:name="android.max_aspect"
+        android:value="2.1" />
+    <!--小米手机开启刘海适配-->
+    <meta-data
+        android:name="notch.config"
+        android:value="portrait|landscape" />
+    <!--华为手机开启刘海适配-->
+    <meta-data
+        android:name="android.notch_support"
+        android:value="true" />
+		
 **b. Add AIHelp Activities:**
-
-    <activity
-       android:name="com.ljoy.chatbot.ChatMainActivity"
-       android:configChanges="orientation|screenSize|locale"
-       android:screenOrientation="portrait">
-    </activity>
-    <activity
-       android:name="com.ljoy.chatbot.FAQActivity"
-       android:configChanges="orientation|screenSize|locale"
-       android:screenOrientation="portrait"
-       android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
-       <intent-filter android:label="@string/app_name">
-          <action android:name="android.intent.action.VIEW" />
-          <category android:name="android.intent.category.DEFAULT" />
-          <category android:name="android.intent.category.BROWSABLE" />
-          <data android:scheme="https"
-                android:host="cs30.net"
-                android:pathPrefix="/elvaFAQ" />
-       </intent-filter>
-    </activity>
-    <activity
-            android:name="com.ljoy.chatbot.OPActivity"
-            android:configChanges="orientation|screenSize|locale"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            >
-    </activity>
-    <activity 
-       android:name="com.ljoy.chatbot.WebViewActivity"
-       android:screenOrientation="sensor"
-       android:configChanges="orientation|screenSize|locale"
-       android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
-       <intent-filter android:label="@string/app_name">
-          <action android:name="android.intent.action.VIEW" />
-          <category android:name="android.intent.category.DEFAULT" />
-          <category android:name="android.intent.category.BROWSABLE" />
-       </intent-filter>
-    </activity>
-    <activity
-            android:name="com.ljoy.chatbot.QAWebActivity"
-            android:configChanges="orientation|screenSize|locale" >
-    </activity>
+    
+	<!--需要的Activity-->
+	<activity
+		android:name="com.ljoy.chatbot.ChatMainActivity"
+		android:configChanges="keyboardHidden|orientation|screenSize"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
+	<activity
+		android:name="com.ljoy.chatbot.OPActivity"
+		android:configChanges="keyboardHidden|orientation|screenSize"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
+	<activity
+		android:name="com.ljoy.chatbot.FAQActivity"
+		android:configChanges="keyboardHidden|orientation|screenSize"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
+	<activity
+		android:name="com.ljoy.chatbot.WebViewActivity"
+		android:configChanges="keyboardHidden|orientation|screenSize"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
+	<activity
+		android:name="com.ljoy.chatbot.QAWebActivity"
+		android:configChanges="keyboardHidden|orientation|screenSize"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
+	<!--需要的Activity -->
 
 If your project doesn't have AndroidManifest.xml, please create one in reference with AndroidManifest.xml you downloaded in SDK
 
@@ -257,15 +258,19 @@ public void OnAIHelpInitialized(string str)
 
 | Method Name| Purpose |Prerequisites|
 |:------------- |:---------------|:---------------|
-| **[showElva](#showElva)**      | Launch AI Conversation Interface| 
-| **[showElvaOP](#showElvaOP)** | Launch Operation Interface| Need to configure Operation sections|
-| **[showFAQs](#showFAQs)** | Show all FAQs by Sections|Need to configure FAQs，Need to setUserName and setUserId|
-|**[showConversation](#showConversation)**|Launch VIP Conversation Interface| Need to configure FAQs，Need to setUserName and setUserId |
-| **[showSingleFAQ](#showSingleFAQ)** | Show Single FAQ|Need to configure FAQ，Need to setUserName and setUserId|
-| **[setName](#setName)** | Set APP/Game Name|Use it after initialization|
-| **[setUserName](#UserName)** | Set User In-App Name| If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
+|Recommended interface:|
+| **[setName](#setName)** | Set APP/Game Name|Use it after Initialization|
+| **[setUserName](#UserName)** | Set User In-App name| If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
 | **[setUserId](#UserId)** | Set Unique User ID| If the userid is not available, the empty string "" is passed, and a unique device id is generated.
-| **[setSDKLanguage](#setSDKLanguage)** | Set SDK Language|
+| **[setServerId](#ServerId)** | Set the server ID where the player (user) is located | If the game party can't get the data, pass the empty string ""
+| **[setSDKLanguage](#setSDKLanguage)** | Set SDK Language| Note: When switching the language in the game, you must also call it once to ensure the language synchronization of the customer service and the game.
+|Optional interface:|
+| **[showElva](#showElva)**      | Launch AI Conversation Interface| 
+|**[showConversation](#showConversation)**|Launch VIP Conversation Interface| Need to [setUserName](#UserName) and [setUserId](#UserId) |
+| **[showElvaOP](#showElvaOP)** | Launch Operation Interface| Need to configure Operation Sections|
+| **[showFAQs](#showFAQs)** | Show all FAQs by Sections|Need to configure FAQs,Need to [setUserName](#UserName) and [setUserId](#UserId)|
+| **[showFAQSection](#showFAQSection)** | Show all FAQs in a category |
+| **[showSingleFAQ](#showSingleFAQ)** | Show Single FAQ|Need to Configure FAQ,Need to [setUserName](#UserName) and [setUserId](#UserId)|
 
 
 **Note：It is not necessary for you to use all the APIs, especially when you only have one user interface for the customer service in your application. Some APIs already contains entry to other APIs, See below for details：**
@@ -288,7 +293,6 @@ public void OnAIHelpInitialized(string str)
 				Dictionary<string,object> config);
 
 **Coding Example：**
-
 
 	public void AIHelpChat()
 	{
@@ -383,6 +387,7 @@ OR
 ![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP_Android.png "showElvaOP")
 
 **Best Practice：**
+
 > 1. Use this API to present news, announcements, articles or any useful information to users/players. Configure and publish the information in AIHelp web console. 
 
 #### <h4 id="showFAQs">4. Display FAQs, use `showFAQs `</h4>
@@ -399,15 +404,44 @@ OR
     {
         if(sdk != null)
         {
-			Dictionary<string, object> tags = new Dictionary<string, object> ();
-			List<string> tag = new List<string>();
-			tag.Add ("server1");
-			tag.Add ("pay3");
-			tags.Add ("elva-tags", tag);
 			Dictionary<string, object> config = new Dictionary<string, object> ();
-			config.Add ("elva-custom-metadata", tags);
-			config.Add ("showContactButtonFlag", "1"); // Show Contact us in the top right of FAQ list
-			config.Add ("showConversationFlag", "1"); // Show Interface to contact manual reply from FAQ page
+			Dictionary<string, object> map = new Dictionary<string, object> ();
+			List<string> tags = new List<string>();			
+			
+			// The first way to customize needs to be consistent with the background (for the key form)
+			tags.Add("vip1");
+			
+			// "elva-tags" Is the key value can not be changed
+			map.Add("elva-tags", tags);	
+			
+			// The second way to customize does not need to go to the background configuration (for the key-value form)
+			map.Add("udid", "123456789");
+			
+			// "elva-custom-metadata" Is the key value can not be changed
+			config.Add("elva-custom-metadata", map);
+			
+			// Add this parameter, where the key is immutable. The highest priority. Plus the upper right corner of the post faq will never show.
+			// (If you want to display, you need to delete this parameter and join config.Add("showContactButtonFlag", "1");
+			config.Add("hideContactButtonFlag", "1");
+				
+			// The display can be accessed from the upper right corner of the FAQ list (if you do not want to display it, you need to delete this parameter)
+			config.Add("showContactButtonFlag", "1"); 
+			
+			// Click on the upper right corner of the FAQ to enter the upper right corner of the robot interface. (If you do not want to display, you need to delete this parameter.)
+			config.Add("showConversationFlag", "1"); 
+			
+			// Click on the upper right corner of the FAQ and you will be taken to the manual customer service page (without adding the default to the robot interface. If you don't need it, delete this parameter)
+			config.Add("directConversation", "1");
+			
+			// Set the username If you don't get the username, pass in the empty string "" and the default nickname "anonymous" will be used.
+			sdk.setUserName("user_name"); 
+			
+			// Set the user ID. If you don't get the userid, pass in the empty string "" and the system will generate a unique device id.
+			sdk.setUserId("user_id"); 
+			
+			// Set the service ID
+			sdk.setServerId("server_id"); 
+			
 			sdk.showFAQs(config);
         }
     }
@@ -434,14 +468,44 @@ OR
     {
         if(sdk != null)
         {
-			Dictionary<string, object> tags = new Dictionary<string, object> ();
-			List<string> tag = new List<string>();
-			tag.Add ("server1");
-			tag.Add ("pay3");
-			tags.Add ("elva-tags", tag);
 			Dictionary<string, object> config = new Dictionary<string, object> ();
-			config.Add ("elva-custom-metadata", tags);
-			config.Add("showConversationFlag", "1"); // 显示可以从FAQ进入人工客服
+			Dictionary<string, object> map = new Dictionary<string, object> ();
+			List<string> tags = new List<string>();			
+			
+			// The first way to customize needs to be consistent with the background (for the key form)
+			tags.Add("vip1");
+			
+			// "elva-tags" Is the key value can not be changed
+			map.Add("elva-tags", tags);	
+			
+			// The second way to customize does not need to go to the background configuration (for the key-value form)
+			map.Add("udid", "123456789");
+			
+			// "elva-custom-metadata" Is the key value can not be changed
+			config.Add("elva-custom-metadata", map);
+			
+			// Add this parameter, where the key is immutable. The highest priority. Plus the upper right corner of the post faq will never show.
+			// (If you want to display, you need to delete this parameter and join config.Add("showContactButtonFlag", "1");
+			config.Add("hideContactButtonFlag", "1");
+				
+			// The display can be accessed from the upper right corner of the FAQ list (if you do not want to display it, you need to delete this parameter)
+			config.Add("showContactButtonFlag", "1"); 
+			
+			// Click on the upper right corner of the FAQ to enter the upper right corner of the robot interface. (If you do not want to display, you need to delete this parameter.)
+			config.Add("showConversationFlag", "1"); 
+			
+			// Click on the upper right corner of the FAQ and you will be taken to the manual customer service page (without adding the default to the robot interface. If you don't need it, delete this parameter)
+			config.Add("directConversation", "1");
+			
+			// Set the username If you don't get the username, pass in the empty string "" and the default nickname "anonymous" will be used.
+			sdk.setUserName("user_name"); 
+			
+			// Set the user ID. If you don't get the userid, pass in the empty string "" and the system will generate a unique device id.
+			sdk.setUserId("user_id"); 
+			
+			// Set the service ID
+			sdk.setServerId("server_id"); 
+			
 			sdk.showSingleFAQ(faqId, config);
         }
     }
@@ -461,6 +525,7 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 
 
 **Best Practice：**
+
 > 1. Use this method when you want to show a specific FAQ in a proper location of your APP/Game.
 
 #### <h4 id="setName">6. Set Your App's name for AIHelp SDK to display，use `setName`</h4>
@@ -476,6 +541,7 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 - __game_name__: APP/Game Name
 
 **Best Practice：**
+
 > 1. Use this method after SDK initialization.The App's name will display in the title bar of the customer service interface.
 
 #### <h4 id="UserId">7. Set the Unique User ID, use `setUserId`</h4>
@@ -492,6 +558,7 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 - __playerUid__:Unique User ID
 
 **Best Practice：**
+
 > 1. Normally you don not need to use this method if you have passed the user ID in another method. However, if you want to use the FAQ's [Self-Service](#selfservice), then you must set the User Id first.
 
 #### <h4 id="UserName">8. Set User Name，use `setUserName`</h4>
@@ -507,6 +574,7 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 - __playerName:__ User/Player Name
 
 **Best Practice：**
+
 > 1. Use this method to set the user name, which will be shown in the web console's conversation page for the user. You can address the user with this name during the chat.
 > 2. Normally you do not need to use this method if you have passed the user name in another method. However, if you want to use FAQ's [Self-Service](#selfservice), then you must set the User Id first.
 
@@ -524,6 +592,7 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 - __serverId:__ The Unique Server ID
 
 **Best Practice：**
+
 > 1. Normally you do not need to use this method if you have passed the server ID in another method. However, if you want to use the FAQ's [Self-Service](#selfservice), then you must set the User Id first.
 
 #### <h4 id="showConversation">10. Launch VIP Chat Console, use `showConversation`(need to set [UserName](#UserName))</h4>
@@ -564,6 +633,7 @@ or
 - __config__: Optional parameters for customized information. You can pass specific Tag information using vector elva-tags, see the above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 
 **Best Practice：**
+
 > 1. Normally you do not need to use this method unless you intend to allow users to enter VIP conversation without engaging with the AI chat. You may use this method as a privilege for some users.
 
 ![showConversation](https://github.com/AIHELP-NET/Pictures/blob/master/showConversation-EN-Android.png "showConversation")
@@ -586,6 +656,7 @@ Setting the SDK Language will change the FAQs, Operational information, AI Chat 
 ![language](https://github.com/AI-HELP/Docs-Screenshots/blob/master/Language-alias.png "Language Alias")
 
 **Best Practice：**
+
 > 1. Normally AIHelp will use the mobile's lanaguge configuration by default. If you intend to make a different language setting, you need to use this method right after SDK initialization.
 > 2. If your allow users to change the APP language, then you need to use this method to make AIHelp the same lanague with your APP.
 
@@ -623,5 +694,6 @@ Or
 
 
 **Best Practice：**
+
 > 1. Introduce different story lines to users from different sources.
 

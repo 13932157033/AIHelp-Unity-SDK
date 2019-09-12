@@ -1,6 +1,13 @@
 # AIHELP UNITY SDK Release Notes
 [SDK Integration Guide](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README.md)
 
+## 1.5.0
+1.Added faq point stamping information collection popup
+2.Add client to add draft function
+3.Added system automatic reconnection function after player disconnection
+4.Added AndroidFAQ details page video playback function
+5.New operational module client article list can be customized by background color
+
 ## 1.4.4.4
 1. Increase automatic reconnection(IOS&Android)
 2. iOS: In versions below IOS 10,Fix hyperlink text clicks in the story line need to be long pressed

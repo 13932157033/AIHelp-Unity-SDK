@@ -1,6 +1,13 @@
 # AIHELP UNITY SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README_CN.md)
 
+## 1.5.0
+1.新增faq点踩信息收集弹窗
+2.新增客户端增加草稿功能 
+3.新增玩家断线后系统自动重连功能 
+4.新增AndroidFAQ详情页视频播放功能
+5.新增运营模块客户端文章列表能够通过替换资源进行背景色自定义
+
 ## 1.4.4.4
 1. 增加自动重连(IOS&Android)
 2. iOS: 修复iOS10以下版本,修复故事线中的超链接文本点击需要长按
