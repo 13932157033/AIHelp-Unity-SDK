@@ -85,7 +85,27 @@ import the AIHelp unity sdk into your project
 		android:name="com.ljoy.chatbot.QAWebActivity"
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
-	<!--需要的Activity -->
+	<!--需要的Activity -->	
+    
+About the screen orientations: 
+**android:screenOrientation="portrait"** 
+means AIHelp User Interface will adjust display orientation according to the mobile's screen orientation, if you intend to fixate AIHelp UI display, use below setting:
+
+    Coding Example:
+    <activity
+	    android:name="com.ljoy.chatbot.ChatMainActivity"
+	    android:configChanges="keyboardHidden|orientation|screenSize"
+	    android:windowSoftInputMode="adjustResize|stateHidden" 
+	    android:screenOrientation="portrait"/>
+	
+    Portrait Display:
+	android:screenOrientation="portrait"(Recommended: the vertical screen display is better)
+
+    Landscape Display:
+	android:screenOrientation="landscape"
+	
+    Mobile phone physical sensor display：
+	android:screenOrientation="sensor"
 
 If your project doesn't have AndroidManifest.xml, please create one in reference with AndroidManifest.xml you downloaded in SDK
 

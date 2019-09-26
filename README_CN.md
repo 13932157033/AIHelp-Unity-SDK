@@ -84,8 +84,32 @@ aihelp-plugin-unity.unitypackage
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<!--需要的Activity -->
+	
+        
+关于横竖屏显示：上述配置中
+**android:screenOrientation="portrait"**
+代表AIHelp的UI会根据手机屏幕方向自动调整横竖屏。如果您要固定AIHelp屏幕展示，请做如下修改：
+
+    例如:
+    <activity
+	    android:name="com.ljoy.chatbot.ChatMainActivity"
+	    android:configChanges="keyboardHidden|orientation|screenSize"
+	    android:windowSoftInputMode="adjustResize|stateHidden" 
+	    android:screenOrientation="portrait"/>
+
+    竖屏展示：
+	android:screenOrientation="portrait"(推荐使用:竖屏显示效果比较好)
+
+    横屏展示：
+	android:screenOrientation="landscape"
+		
+    手机物理传感器展示：
+	android:screenOrientation="sensor"
+
 
 如果你的Unity工程还没有AndroidManifest.xml, 可以参照SDK下载文件包含的中的AndroidManifest.xml创建一个。
+
+
 ### 4. SDK初始化（必须在应用启动阶段调用）
 
 ### Android: 
