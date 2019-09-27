@@ -55,10 +55,7 @@ aihelp-plugin-unity.unitypackage
     <meta-data
         android:name="notch.config"
         android:value="portrait|landscape" />
-    <!--华为手机开启刘海适配-->
-    <meta-data
-        android:name="android.notch_support"
-        android:value="true" />
+		
   
 **b. 增加activity:**
     
