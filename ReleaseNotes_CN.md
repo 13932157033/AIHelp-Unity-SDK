@@ -1,6 +1,9 @@
 # AIHELP UNITY SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README_CN.md)
 
+## 1.5.1.0
+1. 有未完成客诉时，直接进入人工 
+
 ## 1.5.0
 1.新增faq点踩信息收集弹窗
 2.新增客户端增加草稿功能 
