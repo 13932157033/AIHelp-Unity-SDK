@@ -31,29 +31,29 @@
     <application>
         <!--需要的Activity-->
         <activity
-            android:name="com.ljoy.chatbot.ChatMainActivity" 
+            android:name="com.ljoy.chatbot.ChatMainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="adjustResize|stateHidden" 
-			android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="com.ljoy.chatbot.OPActivity" 
+            android:name="com.ljoy.chatbot.OPActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="adjustResize|stateHidden" 
-			android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="com.ljoy.chatbot.FAQActivity" 
+            android:name="com.ljoy.chatbot.FAQActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="adjustResize|stateHidden" 
-			android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="com.ljoy.chatbot.WebViewActivity" 
+            android:name="com.ljoy.chatbot.WebViewActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="adjustResize|stateHidden" 
-			android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="com.ljoy.chatbot.QAWebActivity" 
+            android:name="com.ljoy.chatbot.QAWebActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="adjustResize|stateHidden" 
-			android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <!--需要的Activity -->
 </manifest>
