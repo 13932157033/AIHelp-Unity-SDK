@@ -164,10 +164,6 @@ __增加需要的权限:__
 
 	<key>NSCameraUsageDescription</key>
 	<string>The customer service of this App may require your permission to access camera</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>The customer service of this App may need to access your location data</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>This App may require your permission to access audio speaker for ingame customer service</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This App may require your permission to access photo library for ingame customer service</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
