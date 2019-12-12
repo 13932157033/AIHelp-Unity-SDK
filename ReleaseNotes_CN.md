@@ -4,6 +4,7 @@
 ## 1.6.0.0
 1. 支持暗黑模式（iOS）
 2. 调用showConversation接口，玩家评价结束后，返回到游戏页面 (iOS & Androoid)
+3. 优化请求(GZIP) (Android)
 
 ## 1.5.1.0
 1. 有未完成客诉时，直接进入人工 
