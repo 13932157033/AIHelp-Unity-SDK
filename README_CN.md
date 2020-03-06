@@ -162,13 +162,20 @@ __增加需要的权限:__
 
 请注意，在Unity生成的Unity-iPhone Xcode工程里, 在Info.plist文件增加如下内容：
 
-	<key>NSCameraUsageDescription</key>
-	<string>The customer service of this App may require your permission to access camera</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This App may require your permission to access photo library for ingame customer service</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>This App may require your permission to access photo library for ingame customer service</string>
-
+```
+<key>NSCameraUsageDescription</key>  
+<string>需要访问您的相机权限，才能拍摄问题图片并反馈给客服</string>  
+<key>NSPhotoLibraryAddUsageDescription</key>  
+<string>需要照片添加权限，才能保存图片到相册</string>  
+<key>NSPhotoLibraryUsageDescription</key>  
+<string>需要访问您的相册权限，才能将图片上传反馈给客服</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>需要访问您的麦克风权限，才能在表单页上传视频录像并反馈给客服</string>
+```
+在Unity生成的Unity-iPhone Xcode工程里点击设置**target** -> 选项卡**General** ->**Linked Frameworks and Libraries**添加如下依赖库：
+`libsqlite3.tbd`
+`libresolv.tbd`
+`WebKit.framework`  
 
 * 参数说明：
 
