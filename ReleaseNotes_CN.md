@@ -1,6 +1,12 @@
 # AIHELP UNITY SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README_CN.md)
 
+## 1.7.2.0
+1.新增消息发送状态提示及重发功能
+2.新增推送功能：个推，极光，APNS
+3.精确回答和相似回答统计
+4.新增网络信息收集功能
+
 ## 1.6.0.0
 1. 支持暗黑模式（iOS）
 2. 调用showConversation接口，玩家评价结束后，返回到游戏页面 (iOS & Androoid)

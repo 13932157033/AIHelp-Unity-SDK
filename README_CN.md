@@ -64,26 +64,31 @@ aihelp-plugin-unity.unitypackage
 		android:name="com.ljoy.chatbot.ChatMainActivity" 
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:windowSoftInputMode="adjustResize|stateHidden" 
+		android:theme="@style/showBgStyleFullscreen"
 		android:screenOrientation="portrait"/>
 	<activity
 		android:name="com.ljoy.chatbot.OPActivity" 
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:windowSoftInputMode="adjustResize|stateHidden" 
+		android:theme="@style/showBgStyleFullscreen"
 		android:screenOrientation="portrait"/>
 	<activity
 		android:name="com.ljoy.chatbot.FAQActivity" 
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:windowSoftInputMode="adjustResize|stateHidden" 
+		android:theme="@style/showBgStyleFullscreen"
 		android:screenOrientation="portrait"/>
 	<activity
 		android:name="com.ljoy.chatbot.WebViewActivity" 
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:windowSoftInputMode="adjustResize|stateHidden" 
+		android:theme="@style/showBgStyleFullscreen"
 		android:screenOrientation="portrait"/>
 	<activity
 		android:name="com.ljoy.chatbot.QAWebActivity" 
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:windowSoftInputMode="adjustResize|stateHidden" 
+		android:theme="@style/showBgStyleFullscreen"
 		android:screenOrientation="portrait"/>
 	<!--需要的Activity -->
 	
