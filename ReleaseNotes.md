@@ -2,10 +2,11 @@
 [SDK Integration Guide](https://github.com/AI-HELP/AIhelp-Unity-SDK/blob/master/README.md)
 
 ## 1.7.2.0
-1.Added message sending status prompt and resend function
-2.Added push function: Push, Aurora, APNS
-3.Statistics of exact and similar answers
-4.Added network information collection function
+1. Added message sending status prompt and resend function
+2. Added push function: Push, Aurora, APNS
+3. Statistics of exact and similar answers
+4. Added network information collection function
+5. Add upload video function
 
 ## 1.6.0.0
 1. Support dark mode (iOS)
@@ -16,11 +17,11 @@
 1. When there are unfinished customer complaints, directly enter the manual customer service
 
 ## 1.5.0
-1.Added faq point stamping information collection popup
-2.Add client to add draft function
-3.Added system automatic reconnection function after player disconnection
-4.Added AndroidFAQ details page video playback function
-5.New operational module client article list can be customized by background color
+1. Added faq point stamping information collection popup
+2.  Add client to add draft function
+3. Added system automatic reconnection function after player disconnection
+4. Added AndroidFAQ details page video playback function
+5. New operational module client article list can be customized by background color
 
 ## 1.4.4.4
 1. Increase automatic reconnection(IOS&Android)
