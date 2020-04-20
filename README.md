@@ -180,7 +180,11 @@ Please note that, you should add the below content into the Info.plist file of y
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>This App may require your permission to access photo library for ingame customer service</string>
 	
-
+Add framework to **Link Binary with Libraries**:<br />
+`WebKit.framework`<br />
+`libsqlite3.tbd`<br />
+`libresolv.tbd`<br />
+    
 **About Parameters：**
 
 | Parameters | Description |

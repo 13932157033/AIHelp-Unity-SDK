@@ -1,8 +1,7 @@
 
 ## 接入说明
 ### 1. 下载AIhelp Unity SDK：
-点击页面右上角的“Clone or download”按钮下载, 下载完成后解压文件得到：
-aihelp-plugin-unity.unitypackage
+点击页面右上角的“Clone or download”按钮下载, 下载完成后解压文件得到：`aihelp-plugin-unity.unitypackage`
 
 注:(仅用于Android)
 如果您的工程里没有 "android-support-v4.jar" 就需要下载后的"android-support-v4.jar" 复制到工程libs文件下
@@ -177,10 +176,10 @@ __增加需要的权限:__
 <key>NSMicrophoneUsageDescription</key>
 <string>需要访问您的麦克风权限，才能在表单页上传视频录像并反馈给客服</string>
 ```
-在Unity生成的Unity-iPhone Xcode工程里点击设置**target** -> 选项卡**General** ->**Linked Frameworks and Libraries**添加如下依赖库：
-`libsqlite3.tbd`
-`libresolv.tbd`
-`WebKit.framework`  
+在Unity生成的Unity-iPhone Xcode工程里点击设置**target** -> 选项卡**General** ->**Linked Frameworks and Libraries**添加如下依赖库：<br />
+`libsqlite3.tbd`<br />
+`libresolv.tbd`<br />
+`WebKit.framework` 
 
 * 参数说明：
 
